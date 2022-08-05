@@ -1,0 +1,436 @@
+{
+    "title": "Das könnt' nen Titel sein",
+    "getSupport": "Erhalte Support auf Discord : @Sharpa#0001",
+    "signOut": "Ausloggen",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "enable": "Aktivieren",
+    "disable": "Deaktivieren",
+    "confirm_with_enter": "Bestätige mit Enter",
+    "lang": {
+        "de": "Deutsch",
+        "us": "Englisch"
+    },
+    "nav": {
+        "dashboard": "Dashboard",
+        "commands": {
+            "title": "Befehle",
+            "default": "Standard",
+            "custom": "Benutzerdefiniert"
+        },
+        "musicBot": {
+            "title": "Musikbot",
+            "player": "Musik-Player",
+            "playlist": "Deine Playlist",
+            "settings": "Einstellungen"
+        },
+        "security": {
+            "title": "Sicherheit",
+            "spam": "Spamschutz"
+        },
+        "documentation": "Dokumentation",
+        "user": {
+            "authentication": "Authentifizierung",
+            "integration": "Verknüpfungen"
+        }
+    },
+    "twitch": {
+        "loginButton": "Mit Twitch verbinden"
+    },
+    "bot": {
+        "status": {
+            "unknown": "-",
+            "online": "Verbunden",
+            "offline": "Nicht verbunden"
+        },
+        "action": {
+            "connect": "Verbinden",
+            "disconnect": "Verbindung trennen"
+        }
+    },
+    "notification": {
+        "info": "Du hast {{count}} Benachrichtigungen"
+    },
+    "integration": {
+        "spotify": {
+            "title": "Spotify-Authentifizierung",
+            "description": "Damit Song-Request etc. funktionieren, benötigst du einen Spotify-Account mit Premium-Zugriff. Klicke auf 'Verknüpfe Spotify' um eine Verknüpfung zwischen dem Bot und Spotify herzustellen.",
+            "connect": "Verknüpfe Spotify",
+            "connected": "Spotify ist verknüft.",
+            "disconnect": "Verknüpfung aufheben"
+        },
+        "discord": {
+            "title": "Discord-Authentifizierung",
+            "description": "Verknüpfe Discord, sodass dein Bot Einladungen erstellen kann",
+            "connect": "Verknüpfe Discord",
+            "connected": "Discord ist verknüft.",
+            "disconnect": "Verknüpfung aufheben"
+        }
+    },
+    "page": {
+        "dashboard": {
+            "title": "Dashboard",
+            "all": "Alle",
+            "chatStats": "Chat-Statistiken",
+            "sentMessages": "Gesendete Nachrichten",
+            "sentCommands": "Gesendete Befehle",
+            "deletedMessages": "Gelöschte Nachrichten",
+            "timeoutedUsers": "Timeouts verteilt",
+            "last7days": "Der letzten 7 Tage",
+            "messages": "Nachrichten",
+            "calls": "Verwendungen",
+            "latestEvents": "Letzte Events",
+            "latestModActions": "Letzte Mod-Aktivitäten",
+            "latestFollowers": "Letzte Follower",
+            "eventMessage": {
+                "subscription": "Hat abonniert (%arg1%)",
+                "sub_level_1": "Prime-Sub",
+                "sub_level_1000": "Stufe-1",
+                "sub_level_2000": "Stufe-2",
+                "sub_level_3000": "Stufe-3",
+                "subscriptionArg": " // Nachricht: %arg1%",
+                "cheer": "Hat %arg1% Bits dagelassen",
+                "cheerArg": " // Nachricht: %arg1%",
+                "modEmoteonly": "Hat Emote-Only aktiviert",
+                "modEmoteonlyoff": "Hat Emote-Only deaktiviert",
+                "modFollowers": "Hat Follower-Only aktiviert",
+                "modFollowersArg": " (min. %arg1% Minuten)",
+                "modFollowersoff": "Hat Follower-Only deaktiviert",
+                "modDelete": "Hat eine Nachricht von %arg1% gelöscht // Nachricht: \"%arg2%\"",
+                "modTimeout": "Hat %arg1% in einen Timeout versetzt // Länge: %arg2% Sekunden - Grund: %arg3%",
+                "modUntimeout": "Hat den Timeout von %arg1% aufgehoben",
+                "modBan": "Hat vom Kanal %arg1% gesperrt // Grund: %arg2%",
+                "modUnban": "Hat die Sperre von %arg1% aufgehoben",
+                "modClear": "Hat den Chatverlauf gecleared"
+            }
+        },
+        "user": {
+            "auth": {
+                "twitch_auth_title": "Twitch-Authentifizierung",
+                "twitch_auth_description": "Deinen Authentifizierungs-Token erhälsts du hier:",
+                "action": {
+                    "submit": "Speichern"
+                },
+                "toastr": {
+                    "success_title": "Erfolg",
+                    "success_text": "Dein Authentifizierungs-Token wurde gespeichert",
+                    "error_title": "Fehlschlag",
+                    "error_text": "Etwas ist schiefgelaufen"
+                }
+            }
+        },
+        "security": {
+            "spam": {
+                "exempt": {
+                    "title": "Ausnahmen",
+                    "description": "Lege hier fest, welche Benutzer(-gruppen) nicht von dem Spamfilter betroffen sind.",
+                    "label": {
+                        "entry": "Eintrag hinzufügen"
+                    },
+                    "placeholder": {
+                        "entry": "Username"
+                    },
+                    "table": {
+                        "type": {
+                            "role": "Rolle",
+                            "user": "Benutzer",
+                            "unknown": "Unbekannt"
+                        },
+                        "role": {
+                            "subscriber": "Subscriber",
+                            "vip": "V.I.P.",
+                            "regular": "Regular"
+                        },
+                        "header": {
+                            "type": "Typ",
+                            "value": "Wert",
+                            "action": "Aktion"
+                        }
+                    }
+                },
+                "words": {
+                    "tab": "Blacklist",
+                    "title": "Blacklist Einstellungen",
+                    "subtitle": "Dieser Spam-Filter verhindert die Verwendung von Wörtern/Wortketten, welche auf der Blacklist stehen",
+                    "label": {
+                        "time": "Timeout-Zeit",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Nachricht"
+                    },
+                    "help": {
+                        "time": "Wie lange wird getimeouted? (Angabe in Sekunden)",
+                        "limit": "Wird das Limit überschritten, greift der Bot mit einem Timeout ein.",
+                        "silent": "Es werden keine Timeout-Nachrichten mehr versendet.",
+                        "message": "Nachricht, die versendet wird, wenn der Benutzer getimeouted wurde."
+                    },
+                    "placeholder": {
+                        "time": "Timeout-Zeit in Sekunden (min. 5 | max. 1209600)",
+                        "limit": "",
+                        "message": "Benutzerdefinierte Nachricht"
+                    },
+                    "action": {
+                        "save": "Speichern"
+                    },
+                    "blacklist": {
+                        "title": "Wörter/Sätze Blacklist",
+                        "description": "Lege hier fest, welche Wörter/Sätze unerwünscht sind.",
+                        "label": {
+                            "entry": "Eintrag hinzufügen"
+                        },
+                        "placeholder": {
+                            "entry":"Wort / Satz"
+                        },
+                        "table": {
+                            "word": "Wort / Satz",
+                            "action": "Aktion"
+                        }
+                    },
+                    "toastr": {
+                        "success_title": "Erfolg",
+                        "success_text": "Deine Einstellungen für den '%filter%'-Spamfilter wurden erfolgreich gespeichert",
+                        "error_title": "Fehlschlag",
+                        "error_text": "Etwas ist schiefgelaufen"
+                    }
+                },
+                "caps": {
+                    "tab": "Caps-Lock",
+                    "title": "Caps-Lock Einstellungen",
+                    "subtitle": "Dieser Spamfilter verhindert der übermäßigen Gebrauch von Großbuchstaben.",
+                    "label": {
+                        "time": "Timeout-Zeit",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Nachricht"
+                    },
+                    "help": {
+                        "time": "Wie lange wird getimeouted? (Angabe in Sekunden)",
+                        "limit": "Wird das Limit überschritten, greift der Bot mit einem Timeout ein.",
+                        "silent": "Es werden keine Timeout-Nachrichten mehr versendet.",
+                        "message": "Nachricht, die versendet wird, wenn der Benutzer getimeouted wurde."
+                    },
+                    "placeholder": {
+                        "time": "Timeout-Zeit in Sekunden (min. 5 | max. 1209600)",
+                        "limit": "Limit an Nachrichten in Großbuchstaben",
+                        "message": "Benutzerdefinierte Nachricht"
+                    },
+                    "action": {
+                        "save": "Speichern"
+                    },
+                    "toastr": {
+                        "success_title": "Erfolg",
+                        "success_text": "Deine Einstellungen für den '%filter%'-Spamfilter wurden erfolgreich gespeichert",
+                        "error_title": "Fehlschlag",
+                        "error_text": "Etwas ist schiefgelaufen"
+                    }
+                },
+                "emotes": {
+                    "tab": "Emotes",
+                    "title": "Emote Einstellungen",
+                    "subtitle": "Dieser Spamfilter verhindert der übermäßigen Gebrauch von Emotes.",
+                    "label": {
+                        "time": "Timeout-Zeit",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Nachricht"
+                    },
+                    "help": {
+                        "time": "Wie lange wird getimeouted? (Angabe in Sekunden)",
+                        "limit": "Wird das Limit überschritten, greift der Bot mit einem Timeout ein.",
+                        "silent": "Es werden keine Timeout-Nachrichten mehr versendet.",
+                        "message": "Nachricht, die versendet wird, wenn der Benutzer getimeouted wurde."
+                    },
+                    "placeholder": {
+                        "time": "Timeout-Zeit in Sekunden (min. 5 | max. 1209600)",
+                        "limit": "Limit an Nachrichten mit übermäßigem Emote-Gebrauch",
+                        "message": "Benutzerdefinierte Nachricht"
+                    },
+                    "action": {
+                        "save": "Speichern"
+                    },
+                    "toastr": {
+                        "success_title": "Erfolg",
+                        "success_text": "Deine Einstellungen für den '%filter%'-Spamfilter wurden erfolgreich gespeichert",
+                        "error_title": "Fehlschlag",
+                        "error_text": "Etwas ist schiefgelaufen"
+                    }
+                },
+                "links": {
+                    "tab": "Links",
+                    "title": "Link Einstellungen",
+                    "subtitle": "Dieser Spamfilter verhindert das Versenden von Links.",
+                    "label": {
+                        "time": "Timeout-Zeit",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Nachricht"
+                    },
+                    "help": {
+                        "time": "Wie lange wird getimeouted? (Angabe in Sekunden)",
+                        "limit": "Wird das Limit überschritten, greift der Bot mit einem Timeout ein.",
+                        "silent": "Es werden keine Timeout-Nachrichten mehr versendet.",
+                        "message": "Nachricht, die versendet wird, wenn der Benutzer getimeouted wurde."
+                    },
+                    "placeholder": {
+                        "time": "Timeout-Zeit in Sekunden (min. 5 | max. 1209600)",
+                        "limit": "",
+                        "message": "Benutzerdefinierte Nachricht"
+                    },
+                    "action": {
+                        "save": "Speichern"
+                    },
+                    "toastr": {
+                        "success_title": "Erfolg",
+                        "success_text": "Deine Einstellungen für den '%filter%'-Spamfilter wurden erfolgreich gespeichert",
+                        "error_title": "Fehlschlag",
+                        "error_text": "Etwas ist schiefgelaufen"
+                    }
+                },
+                "symbols": {
+                    "tab": "Sonderzeichen",
+                    "title": "Sonderzeichen Einstellungen",
+                    "subtitle": "Dieser Spamfilter verhindert der übermäßigen Gebrauch von Sonderzeichen.",
+                    "label": {
+                        "time": "Timeout-Zeit",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Nachricht"
+                    },
+                    "help": {
+                        "time": "Wie lange wird getimeouted? (Angabe in Sekunden)",
+                        "limit": "Wird das Limit überschritten, greift der Bot mit einem Timeout ein.",
+                        "silent": "Es werden keine Timeout-Nachrichten mehr versendet.",
+                        "message": "Nachricht, die versendet wird, wenn der Benutzer getimeouted wurde."
+                    },
+                    "placeholder": {
+                        "time": "Timeout-Zeit in Sekunden (min. 5 | max. 1209600)",
+                        "limit": "Limit an Nachrichten mit vielen Sonderzeichen",
+                        "message": "Benutzerdefinierte Nachricht"
+                    },
+                    "action": {
+                        "save": "Speichern"
+                    },
+                    "toastr": {
+                        "success_title": "Erfolg",
+                        "success_text": "Deine Einstellungen für den '%filter%'-Spamfilter wurden erfolgreich gespeichert",
+                        "error_title": "Fehlschlag",
+                        "error_text": "Etwas ist schiefgelaufen"
+                    }
+                }
+            }
+        },
+        "commands": {
+            "title": "Befehle",
+            "table": {
+                "title": "Aktuelle Befehle",
+                "create": "Erstellen",
+                "edit": "Bearbeiten",
+                "remove": "Entfernen",
+                "header": {
+                    "status": "Status",
+                    "name": "Name",
+                    "description": "Beschreibung",
+                    "usage": "Verwendung",
+                    "action": "Aktion"
+                }
+            },
+            "create": {
+                "title": "Neuen Befehl erstellen"
+            },
+            "edit": {
+                "title": "Befehl bearbeiten",
+                "info": {
+                    "title": "Information",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "z.B. Song-Request"
+                    },
+                    "description": {
+                        "label": "Beschreibung",
+                        "placeholder": "z.B. Mit diesem Befehl können sich Zuschauer einen Song wünschen (via Spotify)"
+                    }
+                },
+                "chat_usage": {
+                    "title": "Chat-Nutzung",
+                    "command": {
+                        "label": "Befehl",
+                        "placeholder": "!songrequest"
+                    },
+                    "alias": {
+                        "label": "Alias",
+                        "placeholder": "!alias"
+                    },
+                    "add_alias": "Hinzufügen",
+                    "remove_alias": "Entfernen"
+                },
+                "delay": {
+                    "title": "Verzögerung (in Sekunden)",
+                    "global": {
+                        "label": "Global",
+                        "placeholder": "0"
+                    },
+                    "per_user": {
+                        "label": "Pro User",
+                        "placeholder": "0"
+                    }
+                },
+                "costs": {
+                    "title": "Kosten",
+                    "points": {
+                        "label": "Aktivitätspunkte",
+                        "placeholder": "0"
+                    }
+                },
+                "action": {
+                    "title": "Aktionen",
+                    "template": {
+                        "label": "Vorlagen",
+                        "option": {
+                            "chatInput": "Chat-Eingabe | Einfache Ausgabe einer Nachricht",
+                            "songRequest": "Song-Request | Über die Spotify-API wird ein Song in die Warteschlage hinzugefügt",
+                            "currentSong": "Aktueller Song | Gibt Informationen über den aktuellen Song aus",
+                            "youtubeSongRequest": "Youtube Song-Request | Ein Lied (per URL) wird der Warteschlange hinzugefügt",
+                            "raw": "Raw | Gebe direkte Anweisungen was passieren soll (siehe Docs)"
+                        },
+                        "labels": {
+                            "raw": "Eingabe",
+                            "argc": "Anzahl Argumente",
+                            "message": "Nachricht",
+                            "success_message": "Nachricht bei Erfolg",
+                            "error_message": "Nachricht bei Fehler",
+                            "pause_message": "Nachricht wenn pausiert"
+                        }
+                    }
+                },
+                "permission": {
+                    "title": "Rechte",
+                    "info": "Soll jeder den Befehl nutzen können, dann lasse die Tabelle leer",
+                    "add": {
+                        "label": "Eintrag hinzufügen",
+                        "type": {
+                            "role": "Rolle",
+                            "user": "Benutzer"
+                        },
+                        "user": {
+                            "placeholder": "Benutzername (Twitch)"
+                        }
+                    },
+                    "table": {
+                        "type": "Typ",
+                        "value": "Wert",
+                        "action": "Aktion"
+                    }
+                },
+                "save": "Speichern"
+            }
+        },
+        "musicBot": {
+            "title": "Musikbot",
+            "subtitle": {
+                "player": "Musik-Player",
+                "playlist": "Deine Playlist",
+                "settings": "Einstellungen"
+            }
+        }
+    }
+}

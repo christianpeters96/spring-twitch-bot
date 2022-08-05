@@ -1,0 +1,409 @@
+{
+    "title": "This undoubtedly could be a title",
+    "getSupport": "Get support on Discord : @Sharpa#8459",
+    "signOut": "Sign Out",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enable": "Enable",
+    "disable": "Disable",
+    "confirm_with_enter": "Confirm with Enter",
+    "lang": {
+        "de": "German",
+        "us": "English"
+    },
+    "nav": {
+        "dashboard": "Dashboard",
+        "commands": {
+            "title": "Commands",
+            "default": "Default",
+            "custom": "Custom"
+        },
+        "musicBot": {
+            "title": "Music Bot",
+            "player": "Music Player",
+            "playlist": "Your Playlist",
+            "settings": "Settings"
+        },
+        "security": {
+            "title": "Security",
+            "spam": "Spam Protection"
+        },
+        "documentation": "Documentations",
+        "user": {
+            "authentication": "Authentication",
+            "integration": "Integration"
+        }
+    },
+    "twitch": {
+        "loginButton": "Log in with Twitch"
+    },
+    "bot": {
+        "status": {
+            "unknown": "-",
+            "online": "Connected",
+            "offline": "Not connected"
+        },
+        "action": {
+            "connect": "Connect",
+            "disconnect": "Disconnect"
+        }
+    },
+    "notification": {
+        "info": "You have {{count}} notifications"
+    },
+    "integration": {
+        "spotify": {
+            "title": "Spotify Authentication",
+            "description": "For song request etc. to work, you need a Spotify account with premium access. Click on 'Connect Spotify' to log in to Spotify.",
+            "connect": "Connect Spotify",
+            "connected": "Spotify is connected.",
+            "disconnect": "Disconnect"
+        },
+        "discord": {
+            "title": "Discord Authentication",
+            "description": "Link Discord so that your bot can create invitation links",
+            "connect": "Connect Discord",
+            "connected": "Discord is connected.",
+            "disconnect": "Disconnect"
+        }
+    },
+    "page": {
+        "dashboard": {
+            "title": "Dashboard",
+            "all": "All",
+            "chatStats": "Chat Stats",
+            "sentMessages": "Messages sent",
+            "sentCommands": "Commands sent",
+            "deletedMessages": "Deleted Messages",
+            "timeoutedUsers": "Timeouted Users",
+            "last7days": "Since last 7 days",
+            "messages": "messages",
+            "calls": "calls",
+            "latestEvents": "Latest Events",
+            "latestModActions": "Latest Mod Actions",
+            "latestFollowers": "Latest Followers",
+            "eventMessage": {
+                "subscription": "Has subscribed (%arg1%)",
+                "sub_level_1": "Prime-Sub",
+                "sub_level_1000": "Tier-1",
+                "sub_level_2000": "Tier-2",
+                "sub_level_3000": "Tier-3",
+                "subscriptionArg": " // Message: %arg1%",
+                "cheer": "Has cheered %arg1% Bits",
+                "cheerArg": " // Message: %arg1%",
+                "modEmoteonly": "Enabled Emote-Only mode",
+                "modEmoteonlyoff": "Disabled Emote-Only mode",
+                "modFollowers": "Enabled Follower-Only mode",
+                "modFollowersArg": " (min. %arg1% minutes)",
+                "modFollowersoff": "Disabled Follower-Only mode",
+                "modDelete": "Deleted a message from %arg1% // Message: \"%arg2%\"",
+                "modTimeout": "Has timeouted %arg1% // Duration: %arg2% Sekunden - Reason: %arg3%",
+                "modUntimeout": "Has revoked the Timeout from %arg1%",
+                "modBan": "Has banned %arg1% // Grund: %arg2%",
+                "modUnban": "Has unbanned %arg1%",
+                "modClear": "Cleared the chat"
+            }
+        },
+        "user": {
+            "auth": {
+                "twitch_auth_title": "Twitch Authentication",
+                "twitch_auth_description": "You can get your authentication token here:",
+                "action": {
+                    "submit": "Save"
+                },
+                "toastr": {
+                    "success_title": "Success",
+                    "success_text": "Your authentication token has been saved",
+                    "error_title": "Failure",
+                    "error_text": "Something went wrong"
+                }
+            }
+        },
+        "security": {
+            "spam": {
+                "words": {
+                    "tab": "Blacklist",
+                    "title": "Blacklist Settings",
+                    "subtitle": "This filter prevents the excessive use of capital letters.",
+                    "label": {
+                        "time": "Timeout duration",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Message"
+                    },
+                    "help": {
+                        "time": "How long is the timeout? (in seconds)",
+                        "limit": "If the limit is exceeded, the bot will timeout the user.",
+                        "silent": "No more timeout messages are sent.",
+                        "message": "Custom message that is sent when the user gets timeouted."
+                    },
+                    "placeholder": {
+                        "time": "Timeout duration in seconds (min. 5 | max. 1209600)",
+                        "limit": "",
+                        "message": "Custom Message"
+                    },
+                    "action": {
+                        "save": "Save"
+                    },
+                    "blacklist": {
+                        "title": "Blacklisted Words/Phrases",
+                        "description": "Define here which words/phrases are unwanted.",
+                        "label": {
+                            "entry": "Add Entry"
+                        },
+                        "placeholder": {
+                            "entry":"Word / Phrase"
+                        },
+                        "table": {
+                            "word": "Word / Phrase",
+                            "action": "Action"
+                        }
+                    },
+                    "toastr": {
+                        "success_title": "Success",
+                        "success_text": "Your settings for the '%filter%' filter have been saved",
+                        "error_title": "Failure",
+                        "error_text": "Something went wrong"
+                    }
+                },
+                "caps": {
+                    "tab": "Caps-Lock",
+                    "title": "Caps-Lock Settings",
+                    "subtitle": "This filter prevents the excessive use of capital letters.",
+                    "label": {
+                        "time": "Timeout duration",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Message"
+                    },
+                    "help": {
+                        "time": "How long is the timeout? (in seconds)",
+                        "limit": "If the limit is exceeded, the bot will timeout the user.",
+                        "silent": "No more timeout messages are sent.",
+                        "message": "Custom message that is sent when the user gets timeouted."
+                    },
+                    "placeholder": {
+                        "time": "Timeout duration in seconds (min. 5 | max. 1209600)",
+                        "limit": "Limit of messages in capital letters",
+                        "message": "Custom Message"
+                    },
+                    "action": {
+                        "save": "Save"
+                    },
+                    "toastr": {
+                        "success_title": "Success",
+                        "success_text": "Your settings for the '%filter%' filter have been saved",
+                        "error_title": "Failure",
+                        "error_text": "Something went wrong"
+                    }
+                },
+                "emotes": {
+                    "tab": "Emotes",
+                    "title": "Emote Settings",
+                    "subtitle": "This filter prevents the excessive use of emotes.",
+                    "label": {
+                        "time": "Timeout duration",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Message"
+                    },
+                    "help": {
+                        "time": "How long is the timeout? (in seconds)",
+                        "limit": "If the limit is exceeded, the bot will timeout the user.",
+                        "silent": "No more timeout messages are sent.",
+                        "message": "Custom message that is sent when the user gets timeouted."
+                    },
+                    "placeholder": {
+                        "time": "Timeout duration in seconds (min. 5 | max. 1209600)",
+                        "limit": "Limit of messages with too many emotes",
+                        "message": "Custom Message"
+                    },
+                    "action": {
+                        "save": "Save"
+                    },
+                    "toastr": {
+                        "success_title": "Success",
+                        "success_text": "Your settings for the '%filter%' filter have been saved",
+                        "error_title": "Failure",
+                        "error_text": "Something went wrong"
+                    }
+                },
+                "links": {
+                    "tab": "Links",
+                    "title": "Link Settings",
+                    "subtitle": "This spam filter prevents the sending of links.",
+                    "label": {
+                        "time": "Timeout duration",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Message"
+                    },
+                    "help": {
+                        "time": "How long is the timeout? (in seconds)",
+                        "limit": "If the limit is exceeded, the bot will timeout the user.",
+                        "silent": "No more timeout messages are sent.",
+                        "message": "Custom message that is sent when the user gets timeouted."
+                    },
+                    "placeholder": {
+                        "time": "Timeout duration in seconds (min. 5 | max. 1209600)",
+                        "limit": "",
+                        "message": "Custom Message"
+                    },
+                    "action": {
+                        "save": "Save"
+                    },
+                    "toastr": {
+                        "success_title": "Success",
+                        "success_text": "Your settings for the '%filter%' filter have been saved",
+                        "error_title": "Failure",
+                        "error_text": "Something went wrong"
+                    }
+                },
+                "symbols": {
+                    "tab": "Special characters",
+                    "title": "Special characters Settings",
+                    "subtitle": "This filter prevents the excessive use of special characters.",
+                    "label": {
+                        "time": "Timeout duration",
+                        "limit": "Limit",
+                        "silent": "Silent",
+                        "message": "Message"
+                    },
+                    "help": {
+                        "time": "How long is the timeout? (in seconds)",
+                        "limit": "If the limit is exceeded, the bot will timeout the user.",
+                        "silent": "No more timeout messages are sent.",
+                        "message": "Custom message that is sent when the user gets timeouted."
+                    },
+                    "placeholder": {
+                        "time": "Timeout duration in seconds (min. 5 | max. 1209600)",
+                        "limit": "Limit of messages with too many special characters",
+                        "message": "Custom Message"
+                    },
+                    "action": {
+                        "save": "Save"
+                    },
+                    "toastr": {
+                        "success_title": "Success",
+                        "success_text": "Your settings for the '%filter%' filter have been saved",
+                        "error_title": "Failure",
+                        "error_text": "Something went wrong"
+                    }
+                }
+            }
+        },
+        "commands": {
+            "title": "Commands",
+            "table": {
+                "title": "Current Commands",
+                "create": "Create",
+                "edit": "Edit",
+                "remove": "Remove",
+                "header": {
+                    "status": "Status",
+                    "name": "Name",
+                    "description": "Description",
+                    "usage": "Usage",
+                    "action": "Action"
+                }
+            },
+            "create": {
+                "title": "Create new command"
+            },
+            "edit": {
+                "title": "Edit command",
+                "info": {
+                    "title": "Information",
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "e.g. Song-Request"
+                    },
+                    "description": {
+                        "label": "Description",
+                        "placeholder": "e.g. With this command viewers can request a song (via Spotify)"
+                    }
+                },
+                "chat_usage": {
+                    "title": "Chat Usage",
+                    "command": {
+                        "label": "Command",
+                        "placeholder": "!songrequest"
+                    },
+                    "alias": {
+                        "label": "Alias",
+                        "placeholder": "!alias"
+                    },
+                    "add_alias": "Add Alias",
+                    "remove_alias": "Remove Alias"
+                },
+                "delay": {
+                    "title": "Delay (in seconds)",
+                    "global": {
+                        "label": "Global",
+                        "placeholder": "0"
+                    },
+                    "per_user": {
+                        "label": "Per User",
+                        "placeholder": "0"
+                    }
+                },
+                "costs": {
+                    "title": "Costs",
+                    "points": {
+                        "label": "Activity Points",
+                        "placeholder": "0"
+                    }
+                },
+                "action": {
+                    "title": "Action",
+                    "template": {
+                        "label": "Template",
+                        "option": {
+                            "chatInput": "Chat-Input",
+                            "songRequest": "Song-Request",
+                            "currentSong": "Current Song",
+                            "youtubeSongRequest": "Youtube Song-Request",
+                            "raw": "Raw"
+                        },
+                        "labels": {
+                            "raw": "Raw Input",
+                            "argc": "Argument Count",
+                            "message": "Message",
+                            "success_message": "Success-Message",
+                            "error_message": "Error-Message",
+                            "pause_message": "Pause-Message"
+                        }
+                    }
+                },
+                "permission": {
+                    "title": "Permission",
+                    "info": "Leave this empty if everyone is permitted to use it",
+                    "add": {
+                        "label": "Add entry",
+                        "type": {
+                            "role": "Role",
+                            "user": "User"
+                        },
+                        "user": {
+                            "placeholder": "Username"
+                        }
+                    },
+                    "table": {
+                        "type": "Type",
+                        "value": "Value",
+                        "action": "Action"
+                    }
+                },
+                "save": "Save"
+            }
+        },
+        "musicBot": {
+            "title": "Music Bot",
+            "subtitle": {
+                "player": "Music Player",
+                "playlist": "Your Playlist",
+                "settings": "Settings"
+            }
+        }
+    }
+}

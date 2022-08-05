@@ -1,0 +1,131 @@
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'page.musicBot.title' | translate }}: {{ 'page.musicBot.subtitle.settings' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Musik-Provider</h4>
+                        <p>Wähle aus, welchen Anbieter du für deinen Musikbot verwenden möchtest.</p>
+                        <div class="mbot-provider mbot-p-youtube"
+                            ng-click="$ctrl.setProvider('youtube')"
+                            ng-class="{active: $ctrl.settings.general.provider === 'youtube'}">
+                            
+                            <span class="title">Youtube</span>
+                        </div>
+                        <div class="mbot-provider mbot-p-spotify"
+                            ng-click="$ctrl.setProvider('spotify')"
+                            ng-class="{active: $ctrl.settings.general.provider === 'spotify'}">
+                            
+                            <span class="title">Spotify</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div class="card-body" ng-if="$ctrl.settings.general.provider === 'spotify'">
+                        <h4 class="card-title">Spotify-Einstellungen</h4>
+                        <p>
+                            Für Spotify muss nichts eingestellt werden, und wenn, dann gibt es diese Einstellung (noch) nicht.<br/>
+                            Du musst den Bot lediglich autorisieren, die Spotify-API nutzen zu dürfen. Gehe dazu auf die Seite <a ui-sref="user_auth">Authentifizierung</a>.
+                        </p>
+                    </div>
+                    
+                    <div class="card-body" ng-if="$ctrl.settings.general.provider === 'youtube'">
+                        <h4 class="card-title">Youtube-Einstellungen</h4>
+                        <div class="col-md-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="ytMaxVideoLength">Maximale Videolänge in Sekunden (0 = Beliebige Länge)</label>
+                                    <input id="ytMaxVideoLength"
+                                        type="number" min="0"
+                                        class="form-control"
+                                        ng-model="$ctrl.settings.youtube.maxVideoLength"
+                                        placeholder="Max. Videolänge in Sekunden" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <button class="btn btn-primary" ng-click="$ctrl.save()">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @font-face {
+        font-family: Montserrat;
+        font-weight: normal;
+        src: url('assets/fonts/Montserrat/Montserrat-Regular.ttf');
+    }
+    @font-face {
+        font-family: Montserrat;
+        font-weight: bold;
+        src: url('assets/fonts/Montserrat/Montserrat-Bold.ttf');
+    }
+    .mbot-provider {
+        width: 200px;
+        height: 50px;
+        border: 1px solid lightgray;
+        font-family: "Montserrat";
+        float: left;
+        margin-right: 5px;
+        cursor: pointer;
+        position: relative;
+    }
+    .mbot-p-spotify {
+        color: gray;
+        font-weight: bold;
+        background-color: transparent;
+        transition: all 0.2s;
+    }
+    
+    .mbot-p-spotify.active {
+        border: 3px solid rgba(30, 215, 96, 1);
+        color: rgba(30, 215, 96, 1);
+        background-color: rgba(25, 20, 20, 1);
+    }
+    .mbot-p-spotify:hover {
+        color: rgba(30, 215, 96, 1);
+        background-color: rgba(25, 20, 20, 1);
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+    .mbot-p-youtube {
+        color: gray;
+        font-weight: bold;
+        background-color: transparent;
+        transition: all 0.2s;
+    }
+    .mbot-p-youtube.active {
+        border: 3px solid rgba(255, 0, 0, 1);
+        color: rgba(255, 0, 0, 1);
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .mbot-p-youtube:hover {
+        color: rgba(255, 0, 0, 1);
+        background-color: rgba(40, 40, 40, 1);
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+    .mbot-provider .title {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+    }
+    .mbot-provider.active .title {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+</style>

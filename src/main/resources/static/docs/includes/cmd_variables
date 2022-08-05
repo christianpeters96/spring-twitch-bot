@@ -1,0 +1,50 @@
+<h1 id='translation-missing-none-cmdvartitle'>translation missing: none.cmdVarTitle</h1>
+<p>translation missing: none.cmdVarText1</p>
+
+<p>translation missing: none.cmdVarText2</p>
+
+<p>translation missing: none.cmdVarText3</p>
+<h2 id='translation-missing-none-cmdvarargstitle'>translation missing: none.cmdVarArgsTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdVarArgsSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say /timeout <span class="k">${</span><span class="nv">1</span><span class="k">}</span> <span class="k">${</span><span class="nv">2</span><span class="k">}</span> <span class="k">${</span><span class="nv">3</span><span class="k">}</span>
+</code></pre></div>
+<p>translation missing: none.cmdVarArgsText</p>
+<h2 id='translation-missing-none-cmdvarcustomtitle'>translation missing: none.cmdVarCustomTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdVarCustomSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>translation missing: none.cmdVarCustomExample1
+say translation missing: none.cmdVarCustomExample2
+</code></pre></div>
+<p>translation missing: none.cmdVarCustomText</p>
+<h2 id='translation-missing-none-cmdvardynamictitle'>translation missing: none.cmdVarDynamicTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdVarDynamicSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>spotify.request <span class="k">${</span><span class="nv">1</span><span class="k">}</span>
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<p>translation missing: none.cmdVarDynamicText</p>
+
+<ul>
+<li>translation missing: none.cmdVarDynamicList1</li>
+<li>translation missing: none.cmdVarDynamicList2</li>
+</ul>
+<h2 id='translation-missing-none-cmdvarsysusertitle'>translation missing: none.cmdVarSysUserTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdVarSysUserSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say translation missing: none.cmdVarSysUserExample1
+<span class="c"># translation missing: none.cmdVarSysUserExample2</span>
+</code></pre></div>
+<p>translation missing: none.cmdVarSysUserText</p>
+<h2 id='translation-missing-none-cmdvarsyspointstitle'>translation missing: none.cmdVarSysPointsTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdVarSysPointsSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say translation missing: none.cmdVarSysPointsExample1
+<span class="c"># translation missing: none.cmdVarSysPointsExample2</span>
+</code></pre></div>
+<p>translation missing: none.cmdVarSysPointsText</p>

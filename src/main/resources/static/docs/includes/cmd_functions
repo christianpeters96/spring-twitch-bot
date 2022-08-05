@@ -1,0 +1,86 @@
+<h1 id='translation-missing-none-cmdfunctitle'>translation missing: none.cmdFuncTitle</h1>
+<p>translation missing: none.cmdFuncText1</p>
+
+<p>translation missing: none.cmdFuncText2</p>
+<h2 id='translation-missing-none-cmdfuncsettitle'>translation missing: none.cmdFuncSetTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdFuncSetSide1</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.paused translation missing: none.cmdFuncSetExample1
+<span class="c"># Parameter 1: "spotify.paused"</span>
+<span class="c"># Parameter 2: "translation missing: none.cmdFuncSetExample1"</span>
+</code></pre></div>
+<blockquote>
+<p>translation missing: none.cmdFuncSetSide2</p>
+</blockquote>
+
+<p>translation missing: none.cmdFuncSetText1</p>
+
+<p>translation missing: none.cmdFuncSetText2</p>
+
+<p>translation missing: none.cmdFuncSetText3</p>
+
+<p>translation missing: none.cmdFuncSetText4</p>
+<h2 id='translation-missing-none-cmdfuncsaytitle'>translation missing: none.cmdFuncSayTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdFuncSaySide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say translation missing: none.cmdFuncSayExample
+</code></pre></div>
+<p>translation missing: none.cmdFuncSayText1</p>
+
+<p>translation missing: none.cmdFuncSayText2</p>
+
+<p>translation missing: none.cmdFuncSayText3</p>
+<h2 id='translation-missing-none-cmdfuncspreqtitle'>translation missing: none.cmdFuncSpReqTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdFuncSpReqSide1</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.success translation missing: none.cmdFuncSpReqExample1
+<span class="nb">set </span>spotify.error translation missing: none.cmdFuncSpReqExample2
+<span class="nb">set </span>spotify.paused translation missing: none.cmdFuncSpReqExample3
+spotify.request Darude Sandstorm
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<blockquote>
+<p>translation missing: none.cmdFuncSpReqSide2</p>
+
+<p>translation missing: none.cmdFuncSpReqSide3</p>
+
+<p>translation missing: none.cmdFuncSpReqSide4</p>
+</blockquote>
+
+<p>translation missing: none.cmdFuncSpReqText1</p>
+
+<p>translation missing: none.cmdFuncSpReqText2</p>
+
+<ul>
+<li>translation missing: none.cmdFuncSpReqList1</li>
+<li>translation missing: none.cmdFuncSpReqList2</li>
+<li>translation missing: none.cmdFuncSpReqList3</li>
+</ul>
+
+<p>translation missing: none.cmdFuncSpReqText3</p>
+
+<p>translation missing: none.cmdFuncSpReqText4</p>
+<h2 id='translation-missing-none-cmdfuncspgettitle'>translation missing: none.cmdFuncSpGetTitle</h2>
+<blockquote>
+<p>translation missing: none.cmdFuncSpGetSide</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.success translation missing: none.cmdFuncSpGetExample1
+<span class="nb">set </span>spotify.paused translation missing: none.cmdFuncSpGetExample2
+spotify.get
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<p>translation missing: none.cmdFuncSpGetText1</p>
+
+<p>translation missing: none.cmdFuncSpGetText2</p>
+
+<ul>
+<li>translation missing: none.cmdFuncSpGetList1</li>
+<li>translation missing: none.cmdFuncSpGetList2</li>
+</ul>
+
+<p>translation missing: none.cmdFuncSpGetText3</p>
+
+<p>translation missing: none.cmdFuncSpGetText4</p>

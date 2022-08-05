@@ -1,0 +1,85 @@
+<script type="text/ng-template" id="deleteCommand.html">
+    <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Delete Command (ID: {{ $ctrl.info.id }})</h5>
+    </div>
+    <div class="modal-body" id="modal-body">
+        Selected: <b>{{ $ctrl.info.name }}</b> ({{ $ctrl.info.command }})
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" type="button" ng-click="$ctrl.ok()">Delete</button>
+        <button class="btn btn-secondary" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</script>
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'nav.commands.title' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ 'page.commands.table.title' | translate }}</h4>
+                        <p class="card-description">
+                            <a class="btn btn-primary" style="color:white;" ui-sref="command_create">
+                                <span class="mdi mdi-plus"></span>&nbsp; {{ 'page.commands.table.create' | translate }}
+                            </a>
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th> {{ 'page.commands.table.header.status' | translate }} </th>
+                                    <th> {{ 'page.commands.table.header.name' | translate }} </th>
+                                    <th> {{ 'page.commands.table.header.description' | translate }} </th>
+                                    <th> {{ 'page.commands.table.header.usage' | translate }} </th>
+                                    <th> <!-- usage number --> </th>
+                                    <th> {{ 'page.commands.table.header.action' | translate }} </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="command in $ctrl.commands track by command.id">
+                                    <td ng-style="{ color: '#' + (command.enabled ? '008800' : '880000') }">{{ command.enabled ? 'enabled' : 'disabled' | translate }}</td>
+                                    <td>{{ command.name }}</td>
+                                    <td>{{ command.description }}</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar"
+                                                 style="width: calc(0/0*100%)"
+                                                 aria-valuenow="0"
+                                                 aria-valuemin="0"
+                                                 aria-valuemax="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>0 / 0</td>
+                                    <td>
+                                        <button class="btn btn-success" ng-click="$ctrl.enable(command.id)" ng-if="!command.enabled"><span class="mdi mdi-check"></span>&nbsp; {{ 'enable' | translate }}</button>
+                                        <button class="btn btn-secondary" ng-click="$ctrl.disable(command.id)" ng-if="command.enabled"><span class="mdi mdi-close"></span>&nbsp; {{ 'disable' | translate }}</button>
+                                        <button class="btn btn-primary" ng-click="$ctrl.edit(command.id)"><span class="mdi mdi-pencil"></span>&nbsp; {{ 'page.commands.table.edit' | translate }}</button>
+                                        <button class="btn btn-danger" ng-click="$ctrl.delete(command)"><span class="mdi mdi-cancel"></span>&nbsp; {{ 'page.commands.table.remove' | translate }}</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<ul>
+    <li>Name</li>
+    <li>Description</li>
+    <li>Command</li>
+    <li>Aliases</li>
+    <li>Cost</li>
+    <li>Actions</li>
+    <li>Last Uses (DateTime, Nick, Message (cmd-message))</li>
+</ul>
+-->

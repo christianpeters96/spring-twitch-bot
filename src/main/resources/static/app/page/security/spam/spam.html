@@ -1,0 +1,94 @@
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'nav.security.title' | translate }}: {{ 'nav.security.spam' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="$ctrl.changeTab('words')" ng-class="{'active':$ctrl.tab==='words'}" onclick="event.preventDefault()">
+                        {{ 'page.security.spam.words.tab' | translate }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="$ctrl.changeTab('caps')" ng-class="{'active':$ctrl.tab==='caps'}" onclick="event.preventDefault()">
+                        {{ 'page.security.spam.caps.tab' | translate }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="$ctrl.changeTab('emotes')" ng-class="{'active':$ctrl.tab==='emotes'}" onclick="event.preventDefault()">
+                        {{ 'page.security.spam.emotes.tab' | translate }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="$ctrl.changeTab('links')" ng-class="{'active':$ctrl.tab==='links'}" onclick="event.preventDefault()">
+                        {{ 'page.security.spam.links.tab' | translate }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="$ctrl.changeTab('symbols')" ng-class="{'active':$ctrl.tab==='symbols'}" onclick="event.preventDefault()">
+                        {{ 'page.security.spam.symbols.tab' | translate }}
+                    </a>
+                </li>
+            </ul>
+            <div class="card col-md-12">
+                <div class="card-body">
+                    <div class="row">
+                        <div ng-if="$ctrl.tab === 'words'" class="col-md-6">
+                            <div>
+                                <spam-settings filter-name="words" no-limit="true" />
+                                <spam-blacklist />
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.tab === 'words'" class="col-md-6">
+                            <spam-exempt filter-name="words"/>
+                        </div>
+
+                        <div ng-if="$ctrl.tab === 'caps'" class="col-md-6">
+                            <div>
+                                <spam-settings filter-name="caps" />
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.tab === 'caps'" class="col-md-6">
+                            <spam-exempt filter-name="caps"/>
+                        </div>
+
+                        <div ng-if="$ctrl.tab === 'emotes'" class="col-md-6">
+                            <div>
+                                <spam-settings filter-name="emotes" />
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.tab === 'emotes'" class="col-md-6">
+                            <spam-exempt filter-name="emotes"/>
+                        </div>
+
+                        <div ng-if="$ctrl.tab === 'links'" class="col-md-6">
+                            <div>
+                                <spam-settings filter-name="links" no-limit="true"  />
+                                <spam-link-whitelist />
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.tab === 'links'" class="col-md-6">
+                            <spam-exempt filter-name="links"/>
+                        </div>
+
+                        <div ng-if="$ctrl.tab === 'symbols'" class="col-md-6">
+                            <div>
+                                <spam-settings filter-name="symbols" />
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.tab === 'symbols'" class="col-md-6">
+                            <spam-exempt filter-name="symbols"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<code><pre>{{$ctrl.settings | json}}</pre></code>

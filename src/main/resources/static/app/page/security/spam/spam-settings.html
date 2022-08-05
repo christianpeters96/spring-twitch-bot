@@ -1,0 +1,48 @@
+<h4 class="card-title">{{ 'page.security.spam.' + filterName + '.title' | translate }} -
+    <span style="color:#00CC00;" ng-if="$ctrl.settings.active === true">{{ 'enabled' | translate }}</span>
+    <span style="color:#CC0000;" ng-if="$ctrl.settings.active === false">{{ 'disabled' | translate }}</span>
+</h4>
+<p class="card-description">{{ 'page.security.spam.' + filterName + '.subtitle' | translate }}</p>
+<form>
+    <div class="form-group row" ng-hide="noTimeoutTime">
+        <label class="col-sm-3 col-form-label" for="timeoutTime">{{ 'page.security.spam.' + filterName + '.label.time' | translate }}</label>
+        <div class="col-sm-9">
+            <input type="number" min="5" max="1209600" id="timeoutTime" class="form-control"
+                   placeholder="{{ 'page.security.spam.' + filterName + '.placeholder.time' | translate }}"
+                   ng-model="$ctrl.settings.timeout_duration"/>
+            <small>{{ 'page.security.spam.' + filterName + '.help.time' | translate }}</small>
+        </div>
+    </div>
+    <div class="form-group row" ng-hide="noLimit">
+        <label class="col-sm-3 col-form-label" for="limit">{{ 'page.security.spam.' + filterName + '.label.limit' | translate }}</label>
+        <div class="col-sm-9">
+            <input type="number" min="5" max="100" id="limit" class="form-control"
+                   placeholder="{{ 'page.security.spam.' + filterName + '.placeholder.limit' | translate }}"
+                   ng-model="$ctrl.settings.allowed_limit"/>
+            <small>{{ 'page.security.spam.' + filterName + '.help.limit' | translate }}</small>
+        </div>
+    </div>
+    <div class="form-group row" ng-hide="noSilent">
+        <label class="col-sm-3 col-form-label" for="silentMode">{{ 'page.security.spam.' + filterName + '.label.silent' | translate }}</label>
+        <div class="col-sm-9" style="padding-top: 5px;">
+            <input type="checkbox" id="silentMode" ng-model="$ctrl.settings.silent" />
+            <label for="silentMode" style="padding:5px;"><small>{{ 'page.security.spam.' + filterName + '.help.silent' | translate }}</small></label>
+        </div>
+    </div>
+    <div class="form-group row" ng-hide="noMessage">
+        <label class="col-sm-3 col-form-label" for="customMessage">{{ 'page.security.spam.' + filterName + '.label.message' | translate }}</label>
+        <div class="col-sm-9">
+            <input type="text" min="5" max="100" id="customMessage" class="form-control"
+                   placeholder="{{ 'page.security.spam.' + filterName + '.placeholder.message' | translate }}"
+                   ng-model="$ctrl.settings.message"/>
+            <small>{{ 'page.security.spam.' + filterName + '.help.message' | translate }}</small>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3"></label>
+        <div class="col-sm-9">
+            <button class="btn btn-primary" ng-click="$ctrl.save()">{{ 'page.security.spam.' + filterName + '.action.save' | translate }}</button>
+            <button class="btn btn-{{ $ctrl.settings.active === true ? 'danger' : 'success' }}" ng-click="$ctrl.toggle()">{{ $ctrl.settings.active === true ? 'disable' : 'enable' | translate }}</button>
+        </div>
+    </div>
+</form>

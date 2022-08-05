@@ -1,0 +1,41 @@
+<h4 class="card-title">{{ 'page.security.spam.exempt.title' | translate }}</h4>
+<p class="card-description">{{ 'page.security.spam.exempt.description' | translate }} <b>{{ 'confirm_with_enter' | translate }}</b></p>
+<form ng-submit="$ctrl.add()">
+    <div class="form-group row" ng-hide="noTimeoutTime">
+        <label class="col-sm-3 col-form-label">{{ 'page.security.spam.exempt.label.entry' | translate }}</label>
+        <div class="col-sm-3">
+            <select class="form-control" ng-model="$ctrl.type" ng-change="$ctrl.typeChanged()">
+                <option value="role">{{ 'page.security.spam.exempt.table.type.role' | translate }}</option>
+                <option value="user">{{ 'page.security.spam.exempt.table.type.user' | translate }}</option>
+            </select>
+        </div>
+        <div class="col-sm-5" ng-show="$ctrl.type === 'user'">
+            <input type="text" class="form-control" placeholder="{{ 'page.security.spam.exempt.placeholder.entry' | translate }}" ng-model="$ctrl.value" ng-change="$ctrl.updateQuery()" ng-disabled="$ctrl.lock === true"/>
+        </div>
+        <div class="col-sm-5" ng-show="$ctrl.type === 'role'">
+            <select class="form-control" ng-model="$ctrl.value" ng-change="$ctrl.updateQuery()">
+                <option ng-repeat="role in $ctrl.roleList" ng-value="role.key" ng-bind="role.name"></option>
+            </select>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-success btn-sm"><span class="mdi mdi-plus"></span></button>
+        </div>
+    </div>
+</form>
+<table class="table blacklist-table">
+    <thead>
+        <tr>
+            <th>{{ 'page.security.spam.exempt.table.header.type' | translate }}</th>
+            <th>{{ 'page.security.spam.exempt.table.header.value' | translate }}</th>
+            <th>{{ 'page.security.spam.exempt.table.header.action' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="exempt in $ctrl.exemptions">
+            <td>{{ 'page.security.spam.exempt.table.type.'+exempt.type | translate }}</td>
+            <td ng-if="exempt.type === 'role'">{{ 'page.security.spam.exempt.table.role.'+exempt.value | translate }}</td>
+            <td ng-if="exempt.type !== 'role'" ng-bind="exempt.value"></td>
+            <td><span ng-click="$ctrl.remove($index)" style="cursor: pointer; color:rgba(255, 0, 0, 1); opacity: 0.5;" class="blacklist-button mdi mdi-close"></span></td>
+        </tr>
+    </tbody>
+</table>

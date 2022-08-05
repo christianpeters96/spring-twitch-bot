@@ -1,0 +1,130 @@
+de:
+  introTitle: Einführung
+  intro1: Willkommen bei der SharpaBot-Dokumentation! In dieser Dokumentation wird dir erklärt, wie du den Twitch-Bot verwendest, wie Custom-Commands funktionieren (welche Variablen und Methoden verfügbar sind, sowie Verwendungsbeispiele) und es werden die einzelnen Endpunkte unserer API erklärt.
+  intro2: Im dunklen Bereich auf der rechten Seite werden Code-Beispiele angezeigt für die Bot-Commands, sowie Beispiele und Rückgabewerte für die API-Request.
+  intro3: Diese Dokumentation wurde mithilfe von [Slate](https://github.com/slatedocs/slate) erstellt.
+  webUsageTitle: Benutzung der Website
+  webUsageLoginTitle: Einloggen
+  webUsageLoginText: Zur Authentifizierung wird [OAuth 2.0](https://oauth.net/2/) verwendet. Um dich einzuloggen, drücke einfach auf "Mit Twitch verbinden". Du wirst auf eine externe Website weitergeleitet (id.twitch.tv). Bist du bereits bei Twitch eingeloggt, musst du den Service nur noch für den SharpaBot autorisieren. Bist du noch nicht eingeloggt, musst du dich mit deinen Twitch-Daten einloggen.
+  webOverlayTitle: Weboberfläche
+  webOverlayText1: Sobald du dich eingeloggt hast, solltest du auf dem Dashboard landen. Links siehst du die Navigation, mit welcher du auf die verschiedenen Unterseiten wechseln kannst (bspw. Befehle oder Sicherheit).
+  webOverlayText2: Oben in der Leiste kannst du die Sprache einstellen und den aktuellen Status deines Twitch-Bots sehen (Verbunden, Nicht verbunden). Mit einen Klick auf "Verbinden" kannst du deinen Bot starten - vorausgesetzt, der Authentifizierungstoken deines Bots wurde bereits gesetzt. Wurde der Bot bereits gestartet, kannst du mit einem Klick auf "Verbindung trennen" den Bot wieder herunterfahren.
+  webOverlayText3: Weiter links siehst du die Glocke. Diese zeigt bei einem Klick Benachrichtigungen an. Ob und wie viele Benachrichtigungen vorhanden sind, siehst du an der roten Zahl neben der Glocke (ist keine Zahl zu sehen, gibt es keine).
+  webDashboardTitle: "Seite: Dashboard"
+  webDashboardText1: Auf dem Dashboard können **Streamdaten** der **letzten 7 Tage** eingesehen werden. Dazu gehören die Anzahl gesendeter Nachrichten, gesendeter Befehle, gelöschter Nachriten und verteilter Timeouts. Daneben ist ein Liniendiagramm zu sehen, welcher die Werte der einzelnen Tage visualisiert. Unter dem blauen bzw. roten Text sind zwei graue Zahlen zu sehen. Die erste Zahl zeigt die Differenz zum letzten Stream an und die zweite Zahl (in Klammern) gibt die prozentuale Steigung (oder Senkung) an.
+  webDashboardText2: Darunter sind 2 blaue Boxen zu sehen, welche den Top Chatter (der User, welcher am aktivsten im Chat war) und der Top Command (meist verwendeter Befehl) der letzten 7 Tage angezeigt.
+  webCommandsTitle: "Seite: Befehle"
+  webCommandsText1: Auf der Seite "Befehle" ist eine Tabelle zu sehen, welche alle **bereits erstellen Befehle** enthält. Standardmäßig hat der Bot keine Befehle, daher müssen die zuerst angelegt werden. Dazu drück man einfach auf "Erstellen".
+  webCommandsText2: Drückt man auf "Erstellen" kommt man auf eine neue Seite, auf welcher man die einzelnen Parameter des Befehls einstellen kann. Benötigt werden dabei nur **3 Felder** -> **Name**, **Befehl** und die **Aktion** (Gut, da können auch mehrere Felder sein).
+  webCommandsNameTitle: Name (Information)
+  webCommandsNameText: Der Name des Befehls. Dies ist eine Meta-Informationen und wird im Stream nicht gebraucht. Der Name wird auf dieser Webseite angezeigt in der Befehlstabelle zur Identifikation des Befehls. Irgendwann wird es per URL eine Tabelle für alle User geben (wie man sie bspw. vom Nightbot, Moobot oder anderen Bots kennt; dann wird der Name nicht mehr ganz so irrelevant sein.
+  webCommandsDescTitle: Beschreibung (Information)
+  webCommandsDescText: Für die Beschreibung gilt das selbe wie für den Namen, bloß wird die Beschreibung auf der Tabelle der Befehlsverwaltung nicht angezeigt. Später in der öffentlichen Tabelle wird die Beschreibung zu sehen sein.
+  webCommandsCmdTitle: Befehl (Chat-Nutzung)
+  webCommandsCmdText: Mit dem Befehl wird festgelegt, welche Zeichenkette der Benutzer in den Streamchat schreiben muss, damit der Befehl ausgelöst wird. (bspw. "!age" oder "!elo")
+  webCommandsAliasTitle: Alias (Chat-Nutzung)
+  webCommandsAliasText: Wird auf "Alias hinzufügen" gedrückt, können beliebig viele alternative Befehle angegeben werden. (bspw. "!songrequest" (Befehl) und "!sr" (Alias))
+  webCommandsGlobalTitle: Global (Verzögerung)
+  webCommandsGlobalText: Mit der globalen Verzögerung wird verhindert, dass Befehle gespammt werden können. Diese wird in Sekunden angegeben. Ist die Verzögerung auf 30 kann der Befehl erst 30 Sekunden nach der letzten Verwendung wiederverwendet werden.
+  webCommandsPerUserTitle: Pro User (Verzögerung)
+  webCommandsPerUserText: Für die "Pro User"-Verzögerung gilt das gleiche für für die globale Verzögerung, bloß gilt die nur für den Benutzer, der den Befehl verwendet hat. So wird verhindert, dass der gleiche Benutzer den Befehl mehrmals verwendet und andere Benutzer keine Gelegenheit dazu bekommen (bspw. beim Song-Request kann man eine globale Verzögerung von 10 Sekunden einstellen und eine "Pro User"-Verzögerung von 30 Sekunden, sodass nicht immer der gleiche Benutzer seine Songs hinzufügt.)
+  webCommandsActPointsTitle: Aktivitätspunkte (Kosten)
+  webCommandsActPointsText: Hiermit wird angegeben, ob der Befehl Aktivitätspunkte kostet. Die Aktivitätspunkte des Benutzers sind nur einsehbar, wenn ein Befehl erstellt wird, welcher diese ausgibt. <aside class="notice">Erstelle dazu einen neuen Befehl mit der Aktion "**Chat-Eingabe**" und gebe in die Nachricht beispielsweise "**Du besitzt ${points} Aktivitätspunkte**" ein)</aside>
+  webCommandsActionsTitle: Aktionen
+  webCommandsActionsText: Hier können Vorlagen gewählt werden oder direkte Befehle an den Bot (Vorlage "Raw") gegeben werden. Einige Vorlangen haben vorgefertigte Standardwerte (wie "Song-Request" oder "Aktueller Song"), sodass diese schnell erstellt werden können (da es keine Standardbefehle gibt)
+  webCommandsPermTitle: Rechte
+  webCommandsPermText: Hier kann bestimmt werden, wer den Befehl nutzen darf. Man kann eine Rolle auswählen, oder das Recht einzelnen ausgewählten Benutzern geben. Als Broadcaster kannst du den Befehl immer verwenden. Soll der Befehl für jeden verfügbar sein, dann lasse die Tabelle leer.
+  webSecuritySpamTitle: "Seite: Sicherheit -> Spamschutz"
+  webSecuritySpamText: Auf dieser Seite kannst du deinen Spamschutz einstellen. Standardmäßig sind alle Arten von Spamschutz deaktiviert. Über den "Aktivieren"-Button können diese aktiviert werden. Vergesse jedoch nicht, nach dem Aktivieren zu Speichern (durch einen Klick auf den "Speichern"-Button).
+  webSecuritySpamBlacklistTitle: Blacklist
+  webSecuritySpamBlacklistText: Beim Blacklist-Filter handelt es sich um einen einfachen Wort- bzw. Zeichenketten-Filter. Man kann dort Wörter oder Sätze eingeben, welche man in seinem Stream nicht sehen will. Wird die Zeichenkette in einer Nachricht gefunden, dann erhält der Benutzer, der diese erstellt hat einen Timeout.
+  webSecuritySpamCapsTitle: Caps-Lock
+  webSecuritySpamCapsText: Beim "Caps Lock"-Filter handelt es um einen Filter, welcher den übermäßigen Gebrauch von Caps-Lock-Nachrichten (ALLES IN GROẞBUCHSTABEN) verhindert. Man kann dabei ein Limit festlegen (standardmäßig 8). Wenn das Limit innerhalb von 5 Minuten überschritten wird, dann erhält der Benutzer einen Timeout.
+  webSecuritySpamEmotesTitle: Emotes
+  webSecuritySpamEmotesText: Der "Emote"-Filter arbeitet genau so, wie der "Caps-Lock"-Filter, bloß werden hier Nachrichten genommen, welche 4 oder mehr Emotes enthalten.
+  webSecuritySpamLinksTitle: Links
+  webSecuritySpamLinksText: Einfache Sache - Postet jemand einen Link, gibt es einen Timeout (Whitelist-Funktion ist in Planung, für Clip-Whitelist etc.)
+  webSecuritySpamSpCharTitle: Sonderzeichen
+  webSecuritySpamSpCharText: Der Sonderzeichen-Filter arbeitet fast wie der "Caps-Lock"-Filter, jedoch sind die Regeln etwas verschärft. Wenn die Nachricht zu 25% aus Sonderzeichen besteht, wird die Nachricht als potenzieller Spam gewertet. Besteht die Nachricht zu 50% auf Sonderzeichen, wird sie sogar doppelt gewertet.
+  webAuthPageTitle: "Seite: Authentifizierung"
+  webAuthPageText1: Über diese Seite wird der Authentifizierungs-Token für den Bot gesetzt. Den Token erhälst du [hier](https://twitchapps.com/tmi/). Dieser Token muss gesetzt sein, da der Twitch-Bot sich sonst nicht verbinden kann.
+  webAuthPageText2: Für einige Funktionen müssen zusätzliche Dienste verknüpft werden. Da die Song-Requests beispielsweise über Spotify laufen, wird eine Spotify-Verknüpfung benötigt. Klicke dazu einfach auf "Verknüpfe Spotify". <aside class="notice">Auf diese Seite gelangst du, indem du auf dein Avatar (Bild oben rechts) klickst und auf "Authentifizierung"</aside>
+  integrationTitle: Verknüpfungen
+  integrationText: Wir werden versuchen möglichst viele Dienste in diesem Projekt zu integrieren. Aktuell stehen Spotify und Discord zur Verfügung. Durch einen Klick auf dein Avatar (Bild oben rechts) und "Authentifizierung" gelangst du auf die Seite, um diese Verknüpfungen herzustellen.
+  integrationSpotifyTitle: Spotify
+  integrationSpotifyText: <u>Verknüpfe Spotify um folgende Features freizuschalten:</u>
+  integrationSpotifyFeature1: Song-Request (Man kann sich einen Song wünschen)
+  integrationSpotifyFeature2: Song-Anfrage (welcher Song wird aktuell gespielt)
+  integrationSpotifyFeature3: (Geplant) Song-Skip
+  integrationDiscordTitle: Discord
+  integrationDiscordText: <u>Verknüpfe Discord um folgende Features freizuschalten:</u>
+  integrationDiscordFeature1: Discord-Webhook (Benachrichtigung, wenn du Live gehst)
+  cmdFuncTitle: "Befehle: Funktionen"
+  cmdFuncText1: Um dem Broadcaster möglichst viele Freiheiten bei der Erstellung von Befehlen zu lassen, gibt es die Möglichkeiten, dem Bot direkt mitzuteilen, was er tun soll, wenn ein Befehl eingegeben wird (Raw-Input). Um die Erstellung jedoch gleichzeitig nicht zu kompliziert zu gestalten, wurden Standard-Vorlagen eingebaut, wobei man dann nur noch die nötigen Felder ausfüllen muss. Hier werden jedoch die Raw-Funktionen näher beschrieben.
+  cmdFuncText2: Ebenfalls gibt es oben ein Nummernfeld, in welchem du angeben kannst, wie viele Parameter dein erstellter Befehl hat. Wie du die Parameter anwendest, erfährst du unter [Benutzerdefinierte Argumente](#benutzerdefinierte-argumente).
+  cmdFuncSetTitle: "Funktion: 'set'"
+  cmdFuncSetSide1: Möchte man die Nachricht ändern, wenn ein Song-Request passiert, Spotify aber gerade nicht läuft (oder pausiert ist), dann muss man nur die Variable `spotify.paused` ändern.
+  cmdFuncSetSide2: Wird nun die Song-Request-Methode verwendet, wird die neu-definierte "Pause-Nachricht" verwendet, statt der Standard-Nachricht.
+  cmdFuncSetExample1: Sorry, aktuell läuft hier nix.
+  cmdFuncSetText1: Die Funktion 'set' ist relativ simpel. Es werden 2 Parameter erwartet.
+  cmdFuncSetText2: Der erste Parameter ist der eindeutige Schlüssel beziehungsweise der Name der Variable. Dieser wird benötigt, um die Variable später nutzen zu können oder damit das System die Variable erkennen und zuordnen kann (was eher der Fall ist).
+  cmdFuncSetText3: Beim zweiten Parameter handelt es sich schließlich um den Wert beziehungsweise den Inhalt der Variable.
+  cmdFuncSetText4: Sowohl der Schlüssel als auch der Wert können aus beliebigen Zeichen bestehen. Während der Schlüssel keine Leerzeichen enthalten darf, kann der Wert beliebig viele Leerzeichen enthalten. Variable sind meistens optional, da es für die meisten Fälle Standard-Werte gibt (aktuelle sogar in allen Fällen).
+  cmdFuncSayTitle: "Funktion: 'say'"
+  cmdFuncSaySide: "Beispiel: Der Bot grüßt"
+  cmdFuncSayExample: Hallo HeyGuys
+  cmdFuncSayText1: Das ist die wohl einfachste Funktion von allen. Es wird 1 Parameter benötigt.
+  cmdFuncSayText2: Der Parameter ist eine beliebig lange Zeichenfolge und alle Zeichen sind erlaubt (sofern diese im Twitch-Chat funktionieren).
+  cmdFuncSayText3: Es können auch Variablen verwendet werden.
+  cmdFuncSpReqTitle: "Funktion: 'spotify.request'"
+  cmdFuncSpReqSide1: Es wird Sandstorm von Darude hinzugefügt und alle (optionalen) Variablen gesetzt.
+  cmdFuncSpReqSide2: "Wenn alles gut läuft, sollte der Bot nun Antworten: `Als nächstes könnt ihr 'Sandstorm' von Darude genießen.`"
+  cmdFuncSpReqSide3: Es kann sein, dass Lieder mehrere Künstler haben, dann werden diese automatisch getrennt (mit Komma + 'und').
+  cmdFuncSpReqSide4: "Beispiel: `Als nächstes könnt ihr 'Forever' von Justin Bieber, Post Malone und Clever genießen.`"
+  cmdFuncSpReqExample1: Als nächstes könnt ihr '${song.name}' von ${song.artist} genießen.
+  cmdFuncSpReqExample2: Will gerade nicht. Versuch es später nochmal.
+  cmdFuncSpReqExample3: Aktuell wird nichts gespielt. Versuch es später nochmal.
+  cmdFuncSpReqText1: Die Funktion sucht nach einem Song (über Spotify) und fügt den gefundenen Song der Warteschlange hinzu. Das funktioniert nur, wenn Spotify läuft und nicht pausiert ist. Der Befehl benötigt 1 Parameter und verwendet 3 optionale Variablen.
+  cmdFuncSpReqText2: Beim Parameter handelt es sich um den Suchbegriff. Die Variablen sind Nachrichten, welche in verschiedenen Fällen ausgegeben werden.
+  cmdFuncSpReqText3: Nachdem die Funktion `spotify.request` ausgeführt wurde, setzt der Bot eine Variable `response` in welche er die Nachricht (einer der 3 oben genannten Fälle) einträgt.
+  cmdFuncSpReqText4: 'Bei der Funktion werden auch die Variablen `song.name` (Songtitel) und `song.artist` (Künstler (können mehrere sein)) erstellt. <aside class="notice">Variable werden verwendet indem man ein Dollarzeichen setzt und in geschweiften Klammern den Namen der Variable einträgt. Beispiel: `${song.name}`</aside>'
+  cmdFuncSpReqList1: Nachricht, wenn alles funktioniert hat. (`spotify.success`)
+  cmdFuncSpReqList2: Nachricht, wenn etwas unerwartete schiefgelaufen ist (serverseitige Probleme o. Ä.) (`spotify.error`)
+  cmdFuncSpReqList3: Nachricht, wenn Spotify nicht läuft oder pausiert ist. (`spotify.paused`)
+  cmdFuncSpGetTitle: "Funktion: 'spotify.get'"
+  cmdFuncSpGetSide: "Erhalte aktuelle Song-Informationen mit benutzerdefinierten Antworten:"
+  cmdFuncSpGetExample1: Gerade hören wir '${song.name}' von ${song.artist}
+  cmdFuncSpGetExample2: Nö, ist Pause.
+  cmdFuncSpGetText1: Die Funktion gibt Informationen zum aktuell gespielten Song aus (über Spotify) und schreibt die Informationen in Variable. Das funktioniert nur, wenn Spotify läuft und nicht pausiert ist. Der Befehl benötigt keine Parameter und verwendet 2 optionale Variablen.
+  cmdFuncSpGetText2: Die Variablen sind Nachrichten, welche in verschiedenen Fällen ausgegeben werden.
+  cmdFuncSpGetText3: Nachdem die Funktion 'spotify.get' ausgeführt wurde, setzt der Bot eine Variable `response` in welche er die Nachricht (einer der 2 oben genannten Fälle) einträgt.
+  cmdFuncSpGetText4: Bei der Funktion werden auch die Variablen `song.name` (Songtitel) und `song.artist` (Künstler (können mehrere sein)) erstellt.
+  cmdFuncSpGetList1: Nachricht, wenn alles funktioniert hat. (`spotify.success`)
+  cmdFuncSpGetList2: Nachricht, wenn Spotify nicht läuft oder pausiert ist. (`spotify.paused`)
+  cmdVarTitle: "Befehle: Variablen"
+  cmdVarText1: Um Informationen auszugeben, welche nicht statisch sind (wie der Name, die Herkunft oder Ähnliches) kann man Variablen benutzen. Es wird versucht, möglichst viele Variablen anzubieten, sodass du deine Befehle so weit wie möglich personalisieren kannst.
+  cmdVarText2: Auf Variablen wird zugegriffen, indem man ein Dollarzeichen verwendet, und dann in geschweiften Klammern den Namen der Variable eingibt. Darin dürfen keine Leerzeichen verwendet werden.
+  cmdVarText3: Variablen können selber erstellt werden mithilfe der Funktion [`'set'`](#funktion-39-set-39). Es gibt aber auch andere Variablen. Welche das sind und wie du diese verwendest erklärt dieser Abschnitt.
+  cmdVarArgsTitle: "Benutzerdefinierte Argumente"
+  cmdVarArgsSide: "Beispiel: Eigener Timeout-Befehl (Anzahl Argumente: 3)"
+  cmdVarArgsText: Wenn dein Befehl Parameter braucht, beispielsweise der Suchbegriff beim Song-Request Befehl, dann werden diese Parameter in Variablen geschrieben. Der Name der Variable entspricht einer Zahl von 1 bis unendlich. Dabei ist die 1 der erste Parameter, die 2 der zweite und so weiter.
+  cmdVarCustomTitle: "Selbst erstellte Variablen"
+  cmdVarCustomSide: "Beispiel: Befehl, welcher das Alter ausgibt"
+  cmdVarCustomExample1: age 23
+  cmdVarCustomExample2: Ich bin ${age} Jahre alt.
+  cmdVarCustomText: Nachdem man eine Variable mit der Funktion `'set'` erstellt hat, kann man auf diese Variable auch zugreifen.
+  cmdVarDynamicTitle: "Dynamisch erstellte Variablen"
+  cmdVarDynamicSide: "Beispiel: Song-Request mit Standard-Antworten (Anzahl Argumente: 1)"
+  cmdVarDynamicText: Es werden temporäre (dynamische) Variablen erstellt, nachdem bestimmte Funktionen ausgeführt wurden.
+  cmdVarDynamicList1: "[spotify.request](#funktion-39-spotify-request-39) -&gt; setzt die Variablen `response`, `song.name` und `song.artist`"
+  cmdVarDynamicList2: "[spotify.get](#funktion-39-spotify-get-39) -&gt; setzt die Variablen `response`, `song.name` und `song.artist`"
+  cmdVarSysUserTitle: "Variable: 'user'"
+  cmdVarSysUserSide: "Beispiel: Der Bot mag den User wohl nicht"
+  cmdVarSysUserExample1: Ich finde @${user} doof.
+  cmdVarSysUserExample2: "Ausgabe: Ich finde @Username doof."
+  cmdVarSysUserText: Die Variable `user` gibt den Namen des Benutzers aus, welcher den Befehl ausgeführt hat.
+  cmdVarSysPointsTitle: "Variable: 'points'"
+  cmdVarSysPointsSide: "Beispiel: Gibt die Aktivitätspunkte des Benutzers aus"
+  cmdVarSysPointsExample1: "Aktivitätspunkte: ${points}"
+  cmdVarSysPointsExample2: "Ausgabe: Aktivitätspunkte: 37"
+  cmdVarSysPointsText: 'Die Variable `points` gibt die Aktivitätspunkte des Benutzers aus, welcher den Befehl ausgeführt hat. <aside class="notice">Übrigens: Es werden pro Stunde 50 Aktivitätspunkte generiert.</aside>'

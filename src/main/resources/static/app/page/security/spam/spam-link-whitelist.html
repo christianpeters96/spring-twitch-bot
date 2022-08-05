@@ -1,0 +1,26 @@
+<h4 class="card-title">Blacklisted Words/Phrases</h4>
+<p class="card-description">Lege hier fest, welche Wörter/Sätze unerwünscht sind. <b>Bestätige mit Enter</b></p>
+<form ng-submit="$ctrl.add()">
+    <div class="form-group row" ng-hide="noTimeoutTime">
+        <label class="col-sm-3 col-form-label" for="newEntry">Eintrag hinzufügen</label>
+        <div class="col-sm-9">
+            <input type="text" id="newEntry" class="form-control" placeholder="Wort / Satz" ng-model="$ctrl.entry" ng-disabled="$ctrl.lock === true"/>
+        </div>
+    </div>
+</form>
+<table class="table blacklist-table">
+    <thead>
+        <tr>
+            <th>Wort / Satz</th>
+            <th>Aktion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="word in $ctrl.words">
+            <td style="max-width:600px; word-wrap: break-word;">{{ word }}</td>
+            <td>
+                <span ng-click="$ctrl.remove($index)" style="cursor: pointer; color:rgba(255, 0, 0, 1); opacity: 0.5;" class="blacklist-button mdi mdi-close"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

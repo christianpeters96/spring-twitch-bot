@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label for="template" class="">{{ 'page.commands.edit.action.template.label' | translate }}</label>
+    <select id="template" ng-model="$ctrl.template" ng-change="$ctrl.onTemplateChange()" class="form-control">
+        <option class="action-template" ng-repeat="(key, ignored) in $ctrl.templates track by $index" value="{{ key }}">
+            {{ 'page.commands.edit.action.template.option.' + key | translate }}
+        </option>
+    </select>
+</div>
+<div ng-repeat="param in $ctrl.templates[$ctrl.template].params track by $index">
+    <div class="form-group">
+        <div ng-if="param.type === 'text' || param.type === 'number'">
+            <label for="dynInput{{$index}}">{{ 'page.commands.edit.action.template.labels.' + param.labelKey | translate }}</label>
+            <input id="dynInput{{$index}}" type="text" class="form-control" ng-model="param.value"  ng-change="$ctrl.onInput()" />
+        </div>
+        <div ng-if="param.type === 'textarea'">
+            <label for="dynTextarea{{$index}}">{{ 'page.commands.edit.action.template.labels.' + param.labelKey | translate }}</label>
+            <textarea id="dynTextarea{{$index}}" class="form-control" ng-model="param.value" ng-change="$ctrl.onInput()" rows="20"></textarea>
+        </div>
+    </div>
+</div>

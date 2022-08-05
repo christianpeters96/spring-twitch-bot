@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>sharpa.de - Twitch Bot</title>
+    <link
+      rel="stylesheet"
+      href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/iconfonts/ionicons/css/ionicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/iconfonts/typicons/src/font/typicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css"
+    />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css" />
+    <link rel="stylesheet" href="assets/css/shared/style.css" />
+    <link rel="stylesheet" href="assets/css/demo_1/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/angular-toastr/dist/angular-toastr.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+  </head>
+  <body ng-app="app" ng-controller="AppController as $appCtrl">
+    <div ui-view="page"></div>
+    <!--<audio controls autoplay>
+			<source src="https://r2---sn-h0jeln7l.googlevideo.com/videoplayback?expire=1615683133&ei=3QlNYM7VMNaD1gL9_ofgBA&ip=95.223.230.236&id=o-AJu1P875JRs8nWKe4T0OOeejDdFvSoJCcJfAYd09pDJ_&itag=251&source=youtube&requiressl=yes&mh=Je&mm=31%2C26&mn=sn-h0jeln7l%2Csn-4g5ednsk&ms=au%2Conr&mv=m&mvi=2&pl=16&initcwndbps=933750&vprv=1&mime=audio%2Fwebm&ns=mCCQ1NWAK-gI7L3TJx73NYMF&gir=yes&clen=53173112&dur=3136.781&lmt=1612602622909092&mt=1615661346&fvip=2&keepalive=yes&fexp=24001374%2C24007246&c=WEB&txp=5432434&n=eZEVHKRI-vgxtm&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAIiOp00B28SLY4vorCZUuIoY11v9fGUPrCFGvreDVXjDAiEAqY-D2LeLXM5BRWD_8e3EupZJKPdcahtOKsNeoQOo1wQ%3D&sig=AOq0QJ8wRgIhAJKa5y1fuOcpKGsuMYBu1IZovH2BODRsyT3tRlsPxLZ_AiEAw-xbd2Wg2ZRoJM3uaLYHqaFhz2x8J2tiRO2-RID4BOw="
+				type="audio/webm">
+		</audio>-->
+
+    <!-- container-scroller -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="assets/js/shared/off-canvas.js"></script>
+    <script src="assets/js/shared/misc.js"></script>
+
+    <!-- node modules -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+    <!-- app -->
+    <script src="app/utils.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.controller.js"></script>
+
+    <script src="app/service/twitch.service.js"></script>
+    <script src="app/service/twitch-bot.service.js"></script>
+    <script src="app/service/integration.service.js"></script>
+    <script src="app/service/spotify.service.js"></script>
+    <script src="app/service/notification.service.js"></script>
+    <script src="app/service/spam-filter.service.js"></script>
+    <script src="app/service/command.service.js"></script>
+    <script src="app/service/variable.service.js"></script>
+    <script src="app/service/channel-event.service.js"></script>
+    <script src="app/service/music-bot.service.js"></script>
+
+    <script src="app/directive/event/ng-mouse-wheel.directive.js"></script>
+    <script src="app/directive/music-player/music-player.directive.js"></script>
+    <script src="app/directive/music-player/music-player.controller.js"></script>
+
+    <script src="app/page/dashboard/dashboard.controller.js"></script>
+    <script src="app/page/user/settings/auth/auth.controller.js"></script>
+    <script src="app/page/commands/commands.controller.js"></script>
+    <script src="app/page/commands/command-create.controller.js"></script>
+    <script src="app/page/commands/command-edit.controller.js"></script>
+    <script src="app/page/commands/action/command-action.controller.js"></script>
+    <script src="app/page/commands/permission/command-permission.controller.js"></script>
+    <script src="app/page/music-bot/playlist/playlist.controller.js"></script>
+    <script src="app/page/music-bot/player/player.controller.js"></script>
+    <script src="app/page/music-bot/settings/settings.controller.js"></script>
+    <script src="app/page/security/spam/spam.controller.js"></script>
+    <script src="app/page/security/spam/spam-settings.controller.js"></script>
+    <script src="app/page/security/spam/spam-blacklist.controller.js"></script>
+    <script src="app/page/security/spam/spam-link-whitelist.controller.js"></script>
+    <script src="app/page/security/spam/spam-exempt.controller.js"></script>
+
+    <script src="app/page/commands/action/command-action.directive.js"></script>
+    <script src="app/page/commands/permission/command-permission.directive.js"></script>
+    <script src="app/page/security/spam/spam-settings.directive.js"></script>
+    <script src="app/page/security/spam/spam-blacklist.directive.js"></script>
+    <script src="app/page/security/spam/spam-link-whitelist.directive.js"></script>
+    <script src="app/page/security/spam/spam-exempt.directive.js"></script>
+  </body>
+</html>

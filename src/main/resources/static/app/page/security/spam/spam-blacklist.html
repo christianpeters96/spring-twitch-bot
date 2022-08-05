@@ -1,0 +1,26 @@
+<h4 class="card-title">{{ 'page.security.spam.words.blacklist.title' | translate }}</h4>
+<p class="card-description">{{ 'page.security.spam.words.blacklist.description' | translate }} <b>{{ 'confirm_with_enter' | translate }}</b></p>
+<form ng-submit="$ctrl.add()">
+    <div class="form-group row" ng-hide="noTimeoutTime">
+        <label class="col-sm-3 col-form-label" for="newEntry">{{ 'page.security.spam.words.blacklist.label.entry' | translate }}</label>
+        <div class="col-sm-9">
+            <input type="text" id="newEntry" class="form-control" placeholder="{{ 'page.security.spam.words.blacklist.placeholder.entry' | translate }}" ng-model="$ctrl.entry" ng-disabled="$ctrl.lock === true"/>
+        </div>
+    </div>
+</form>
+<table class="table blacklist-table">
+    <thead>
+        <tr>
+            <th>{{ 'page.security.spam.words.blacklist.table.word' | translate }}</th>
+            <th>{{ 'page.security.spam.words.blacklist.table.action' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="word in $ctrl.words">
+            <td style="max-width:600px; word-wrap: break-word;">{{ word }}</td>
+            <td>
+                <span ng-click="$ctrl.remove($index)" style="cursor: pointer; color:rgba(255, 0, 0, 1); opacity: 0.5;" class="blacklist-button mdi mdi-close"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

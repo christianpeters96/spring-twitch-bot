@@ -1,0 +1,49 @@
+<div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'page.musicBot.title' | translate }}: {{ 'page.musicBot.subtitle.playlist' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Song hinzufügen</h4>
+                        <div>
+                            <input type="text" class="form-control" style="width:400px;" ng-model="$ctrl.input_url" />
+                            <button class="btn btn-primary" style="height:32px;" ng-click="$ctrl.addSong()">Song hinzufügen</button>
+                            <button class="btn btn-primary" style="height:32px;" ng-click="$ctrl.addPlaylist()">Playlist hinzufügen</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Deine Playlist</h4>
+                        <table style="width:100%">
+                            <thead>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Duration</th>
+                                <th>Actions</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="(id, video) in $ctrl.playlist track by video.id">
+                                    <td>{{ $index+1 }}</td>
+                                    <td>{{ video.videoTitle }}</td>
+                                    <td>{{ video.videoAuthor }}</td>
+                                    <td>{{ video.videoDurationSec }}</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-danger" ng-click="$ctrl.removeByIndex($index)">REMOVE</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

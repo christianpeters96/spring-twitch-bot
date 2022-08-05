@@ -1,0 +1,33 @@
+{
+  "content": "Hey @everyone, %channel% ist nun Live! Schaut doch mal auf seinem Kanal vorbei! https://twitch.tv/%channel%",
+  "username": "%author_name%",
+  "avatar_url": "%author_avatar%",
+  "embeds": [
+    {
+      "author": {
+        "name": "%channel%",
+        "url": "https://twitch.tv/%channel%",
+        "icon_url": "%avatar%"
+      },
+      "thumbnail": {
+        "url": "%avatar%"
+      },
+      "description": "[**%title%**](https://twitch.tv/%channel%)",
+      "fields": [
+        {
+          "name": "Game",
+          "value": "%game%",
+          "inline": true
+        },
+        {
+          "name": "Viewers",
+          "value": "%viewers%",
+          "inline": true
+        }
+      ],
+      "image": {
+        "url": "%preview%"
+      }
+    }
+  ]
+}

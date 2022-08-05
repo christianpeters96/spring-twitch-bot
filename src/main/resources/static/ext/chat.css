@@ -1,0 +1,10 @@
+.chat-message {
+    display: block;
+    margin-top: 5px;
+}
+.chat-message-author {
+
+}
+.chat-message-author .name {
+    font-weight: bold;
+}

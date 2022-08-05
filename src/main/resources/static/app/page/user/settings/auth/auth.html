@@ -1,0 +1,75 @@
+<div class="content-wrapper">
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'nav.user.authentication' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch grid-margin">
+            <div class="row flex-grow">
+                <div class="col-12 stretch-card">
+                    <div class="card" style="min-height:200px;">
+                        <div class="card-body">
+                            <div class="card-bg"><span class="mdi mdi-twitch" style="color: #6441a5;"></span></div>
+                            <div class="card-with-bg">
+                                <h4 class="card-title">{{ 'page.user.auth.twitch_auth_title' | translate }}</h4>
+                                <p class="card-description"><small>{{ 'page.user.auth.twitch_auth_description' | translate }} <a target="_blank" href="https://twitchapps.com/tmi/">https://twitchapps.com/tmi/</a></small></p>
+                                <form class="forms-sample">
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" placeholder="Token" ng-model="$ctrl.twitchToken">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2" ng-click="$ctrl.submitTwitchToken()">{{ 'page.user.auth.action.submit' | translate }}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">{{ 'nav.user.integration' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch grid-margin" ng-repeat="(key, val) in $ctrl.integrations track by $index">
+            <div class="row flex-grow">
+                <div class="col-12 stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-bg" ng-if="val.mdi !== null"><span class="mdi {{ val.mdi }}" style="color: #1db954;"></span></div>
+                            <div class="card-bg" ng-if="val.image !== null"><img ng-src="{{ val.image }}" /></div>
+                            <div class="card-with-bg">
+                                <h4 class="card-title">{{ 'integration.' + key + '.title' | translate }}</h4>
+                                <p class="card-description"><small>{{ 'integration.' + key + '.description' | translate }}</small></p>
+                                <form class="forms-sample" ng-if="val.valid !== true">
+                                    <button type="submit" class="btn btn-success mr-2" ng-click="$ctrl.openUrl(val)">{{ 'integration.' + key + '.connect' | translate }}</button>
+                                </form>
+                                <div ng-if="val.valid === true">
+                                    <b style="font-size: 14px;">{{ 'integration.' + key + '.connected' | translate }}</b><br/>
+                                    <form class="forms-sample">
+                                        <button type="submit" class="btn btn-danger mr-2" ng-click="$ctrl.removeConnection(key)" style="margin-top:5px;">{{ 'integration.' + key + '.disconnect' | translate }}</button>
+                                    </form>
+                                </div>
+                                <div ng-if="key === 'discord' && val.valid">
+                                    <label class="form-check-label">Discord-Webhook</label>
+                                    <small>- Für Live-Benachrichtigungen</small>
+                                    <input class="form-control" placeholder="Discord-Webhook" ng-model="$ctrl.var.discord_webhook.value" style="margin-bottom: 10px" />
+                                    <button class="btn btn-primary" ng-click="$ctrl.saveVar($ctrl.var.discord_webhook)">Speichern</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<code><pre>{{$ctrl.integrations|json}}</pre></code>-->

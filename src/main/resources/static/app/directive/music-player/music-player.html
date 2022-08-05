@@ -1,0 +1,97 @@
+<div class="mbot-player">
+    <div class="current-playback">
+        <div ng-if="$dir.currentSong.ytData.hasOwnProperty('thumbnail')">
+            <img class="thumbnail" ng-src="{{$dir.currentSong.ytData.thumbnail}}" />
+            <div class="info song-name">
+                <b>{{ $dir.currentSong.ytData.videoDetails.title }}</b>
+            </div>
+            <div class="info channel-name">
+                Channel: {{ $dir.currentSong.ytData.videoDetails.author }}
+            </div>
+            <div class="info song-duration">
+                Duration: {{ $dir.timeInfo.max }}
+            </div>
+            <div class="info requested-by" ng-if="$dir.currentSong.playlist === 'requests'">
+                Requested song by <b>{{ $dir.currentSong.musicData.requestedBy }}</b> (Date: {{ $dir.currentSong.musicData.requestedTs | date:'dd.MM.yyyy - HH:mm:ss' }})
+            </div>
+        </div>
+    </div>
+    
+    <div class="song-list">
+        <div class="category">
+            <div class="title" ng-click="$dir.toggleExpandRequests()">
+                <i class="mdi" ng-class="{'mdi-menu-down': $dir.expandedRequests===true, 'mdi-menu-right': $dir.expandedRequests===false}"></i> Song-Requests
+            </div>
+            <div class="song"
+                ng-repeat="(id, video) in requests track by video.id"
+                ng-click="$dir.changeCurrentSong('requests', $index)"
+                ng-class="{active: $dir.currentSong.playlist === 'requests' && $dir.currentSong.index === $index}"
+                ng-if="$dir.expandedRequests===true">
+
+                <span class="title">{{ video.videoTitle }}</span>
+                <small><span class="author">Channel: <b>{{ video.videoAuthor }}</b></span></small>
+            </div>
+        </div>
+        <div class="category">
+            <div class="title" ng-click="$dir.toggleExpandPlaylist()">
+                <i class="mdi" ng-class="{'mdi-menu-down': $dir.expandedPlaylist===true, 'mdi-menu-right': $dir.expandedPlaylist===false}"></i> Deine Playlist
+            </div>
+            <div class="song"
+                ng-repeat="(id, video) in playlist track by video.id"
+                ng-click="$dir.changeCurrentSong('playlist', $index)"
+                ng-class="{active: $dir.currentSong.playlist === 'playlist' && $dir.currentSong.index === $index}"
+                ng-if="$dir.expandedPlaylist===true">
+
+                <span class="title">{{ video.videoTitle }}</span>
+                <small><span class="author">Channel: <b>{{ video.videoAuthor }}</b></span></small>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="controls">
+        <button class="mdi mdi-skip-previous button skip previous" ng-click="$dir.previousSong()"></button>
+        <button class="mdi button play"
+            ng-class="{'mdi-play': $dir.state=='pause','mdi-pause': $dir.state=='play'}"
+            ng-click="$dir.togglePlay()">
+        </button>
+        <button class="mdi mdi-skip-next button skip next" ng-click="$dir.nextSong()"></button>
+
+        <div class="info duration">
+            <div class="time current">
+                {{ $dir.timeInfo.current }}
+            </div>
+            <div class="progress" ng-click="$dir.fastForward($event)">
+                <div class="progress-bar" role="progressbar" ng-style="{width: $dir.pbMusic+'%'}"></div>
+            </div>
+            <div class="time max">
+                {{ $dir.timeInfo.max }}
+            </div>
+        </div>
+        <div class="info volume">
+            <div class="controls">
+                <div class="progress"
+                    ng-mouse-wheel-up="$dir.changeVolumeViaWheel('up')"
+                    ng-mouse-wheel-down="$dir.changeVolumeViaWheel('down')"
+                    ng-click="$dir.changeVolume($event)">
+                    
+                    <div class="progress-bar" role="progressbar" ng-style="{width: $dir.pbVolume+'%'}"></div>
+                </div>
+                <div class="info">
+                    {{ $dir.pbVolume }}%
+                </div>
+            </div>
+            <button class="mdi button volume"
+                ng-class="{'mdi-volume-low': $dir.pbVolume >= 0 && $dir.pbVolume <= 30, 'mdi-volume-medium': $dir.pbVolume > 30 && $dir.pbVolume <= 70, 'mdi-volume-high': $dir.pbVolume > 70}"
+                ng-click="$dir.toggleVolumeVisibility()"></button>
+            
+            <div class="clearfix"></div>
+        </div>   
+        <div class="song-request-enable">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" ng-model="$dir.songRequestEnabled" ng-change="$dir.toggleSongRequestState()" id="song-request-enable">
+                <label class="custom-control-label" for="song-request-enable">Play song requests</label>
+            </div>
+        </div>
+    </div>
+</div>

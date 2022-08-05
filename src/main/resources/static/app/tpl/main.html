@@ -1,0 +1,174 @@
+<div class="container-scroller" ng-cloak>
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a class="navbar-brand brand-logo" ui-sref="dashboard">
+                <img src="img/logo.png" alt="logo" /> </a>
+            <a class="navbar-brand brand-logo-mini" ui-sref="dashboard">
+                <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown language-dropdown">
+                    <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" ui-sref="" data-toggle="dropdown" aria-expanded="false">
+                        <div class="d-inline-flex mr-0 mr-md-3">
+                            <div class="flag-icon-holder">
+                                <i class="flag-icon flag-icon-{{$appCtrl.currentLanguage}}"></i>
+                            </div>
+                        </div>
+                        <span class="profile-text font-weight-medium d-none d-md-block">{{ 'lang.'+$appCtrl.currentLanguage | translate }}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2 language-switch" aria-labelledby="LanguageDropdown">
+                        <a class="dropdown-item" ng-click="$appCtrl.switchLanguage($language)" ng-repeat="$language in $appCtrl.languageList">
+                            <div class="flag-icon-holder">
+                                <i class="flag-icon flag-icon-{{$language}}"></i>
+                            </div>
+                            {{ 'lang.'+$language | translate }}
+                        </a>
+                    </div>
+                </li>
+                <li ng-if="$appCtrl.authenticated">
+                    <b style="margin-left: 15px;">Bot-Status: </b>&nbsp;
+                    <span class="bot-{{$appCtrl.bot.status}}">{{ 'bot.status.' + $appCtrl.bot.status | translate }}</span>
+                </li>
+                <li ng-if="$appCtrl.authenticated">
+                    <button class="btn btn-{{ $appCtrl.bot.status === 'online' ? 'danger' : 'primary'; }} btn-fw"
+                            style="margin-left: 15px;"
+                            ng-disabled="$appCtrl.bot.action.disabled"
+                            ng-if="$appCtrl.bot.action.method !== null"
+                            ng-click="$appCtrl.bot.action.method()">{{ $appCtrl.bot.action.description | translate }}</button>
+                </li>
+                <li class="nav-item font-weight-light d-none d-lg-block"><small style="color: #CCCCCC;">{{ 'getSupport' | translate }}</small></li>
+            </ul>
+            <ul class="navbar-nav ml-auto" ng-if="$appCtrl.authenticated">
+                <li class="nav-item dropdown">
+                    <a class="nav-link count-indicator" id="notificationDropdown" ui-sref="" data-toggle="dropdown">
+                        <i class="mdi mdi-bell-outline"></i>
+                        <span class="count bg-danger" ng-if="$appCtrl.notifications.length > 0">{{ $appCtrl.notifications.length }}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+                        <a class="dropdown-item py-3 border-bottom">
+                            <p class="mb-0 font-weight-medium float-left">{{ 'notification.info' | translate:'{count:'+$appCtrl.notifications.length+'}' }}</p>
+                            <!-- <p class="mb-0 font-weight-medium float-left">You have {{ $appCtrl.notifications.length }} notifications</p> -->
+                        </a>
+                        <a class="dropdown-item preview-item py-3 cursorPointer" ng-repeat="$notification in $appCtrl.notifications" ng-click="$notification.event($index)">
+                            <div class="preview-thumbnail">
+                                <i class="mdi mdi-{{$notification.icon}} m-auto text-{{$notification.type}}"></i>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal text-dark mb-1">{{ $notification.text }}</h6>
+                                <p class="font-weight-light small-text mb-0"> {{ $notification.sub }} </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown" ng-if="$appCtrl.authenticated">
+                    <a class="nav-link dropdown-toggle" ui-sref="" id="UserDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <img class="img-xs rounded-circle" ng-src="{{$appCtrl.userInfo.logo}}" alt="Profile image"> </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                            <img class="img-md rounded-circle" ng-src="{{$appCtrl.userInfo.logo}}" alt="Profile image">
+                            <p class="mb-1 mt-3 font-weight-semibold">{{ $appCtrl.userInfo.display_name }}</p>
+                            <p class="font-weight-light text-muted mb-0">{{ $appCtrl.userInfo.email }}</p>
+                        </div>
+                        <a class="dropdown-item cursorPointer" ui-sref="user_auth">{{ 'nav.user.authentication' | translate }}<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item cursorPointer" ng-click="$appCtrl.signOut()">{{ 'signOut' | translate }}<i class="dropdown-item-icon ti-power-off"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav" ng-if="$appCtrl.authenticated === true">
+                <li class="nav-item nav-profile">
+                    <a ui-sref="" class="nav-link">
+                        <div class="profile-image">
+                            <img class="img-xs rounded-circle" ng-src="{{$appCtrl.userInfo.logo}}" alt="profile image">
+                            <div class="dot-indicator bg-success"></div>
+                        </div>
+                        <div class="text-wrapper">
+                            <p class="profile-name">{{ $appCtrl.userInfo.name }}</p>
+                            <p class="designation">
+                                <span ng-if="$appCtrl.userInfo.type === 'user'">Default User</span>
+                                <span ng-if="$appCtrl.userInfo.type === 'affiliate'">Twitch-Affiliate</span>
+                                <span ng-if="$appCtrl.userInfo.type === 'partner'">Twitch-Partner</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item nav-category">Main Menu</li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="dashboard">
+                        <i class="menu-icon typcn typcn-document-text"></i>
+                        <span class="menu-title">{{ 'nav.dashboard' | translate }}</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="commands">
+                        <i class="menu-icon typcn typcn-document-text"></i>
+                        <span class="menu-title">{{ 'nav.commands.title' | translate }}</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#musicBot" aria-expanded="false" aria-controls="musicBot" onclick="event.preventDefault()">
+                        <i class="menu-icon typcn typcn-document-add"></i>
+                        <span class="menu-title">{{ 'nav.musicBot.title' | translate }}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="musicBot">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="music_bot_player">{{ 'nav.musicBot.player' | translate }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="music_bot_playlist">{{ 'nav.musicBot.playlist' | translate }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="music_bot_settings">{{ 'nav.musicBot.settings' | translate }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#antiSpam" aria-expanded="false" aria-controls="antiSpam" onclick="event.preventDefault()">
+                        <i class="menu-icon typcn typcn-document-add"></i>
+                        <span class="menu-title">{{ 'nav.security.title' | translate }}</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="antiSpam">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="security_spam">{{ 'nav.security.spam' | translate }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/docs/{{ $appCtrl.currentLanguage }}/index.html" target="_blank">
+                        <i class="menu-icon typcn typcn-document-text"></i>
+                        <span class="menu-title">{{ 'nav.documentation' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <ui-view></ui-view>
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="container-fluid clearfix">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2020 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                        Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                    </span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>

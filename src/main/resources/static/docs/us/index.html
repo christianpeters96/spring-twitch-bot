@@ -1,0 +1,610 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SharpaBot</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-425cffa7.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-e9bde216.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="us us_index" data-languages="[&quot;bash&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <center>
+        <img src="../images/logo-62c6c1c5.png" class="logo" alt="" />
+      </center>
+        <div class="lang-selector">
+              <a href="#" data-language-name="bash">bash</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#using-the-website" class="toc-h1 toc-link" data-title="Using the website">Using the website</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
+                  </li>
+                  <li>
+                    <a href="#web-interface" class="toc-h2 toc-link" data-title="web interface">web interface</a>
+                  </li>
+                  <li>
+                    <a href="#page-authentication" class="toc-h2 toc-link" data-title="Page: Authentication">Page: Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#page-dashboard" class="toc-h2 toc-link" data-title="Page: Dashboard">Page: Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#page-commands" class="toc-h2 toc-link" data-title="Page: Commands">Page: Commands</a>
+                  </li>
+                  <li>
+                    <a href="#page-security-gt-spam-protection" class="toc-h2 toc-link" data-title="Page: Security -&gt; Spam protection">Page: Security -&gt; Spam protection</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#links" class="toc-h1 toc-link" data-title="Links">Links</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#spotify" class="toc-h2 toc-link" data-title="Spotify">Spotify</a>
+                  </li>
+                  <li>
+                    <a href="#discord" class="toc-h2 toc-link" data-title="Discord">Discord</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#commands-functions" class="toc-h1 toc-link" data-title="Commands: Functions">Commands: Functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#function-39-set-39" class="toc-h2 toc-link" data-title="Function: 'set'">Function: 'set'</a>
+                  </li>
+                  <li>
+                    <a href="#function-39-say-39" class="toc-h2 toc-link" data-title="Function: 'say'">Function: 'say'</a>
+                  </li>
+                  <li>
+                    <a href="#function-39-spotify-request-39" class="toc-h2 toc-link" data-title="Function: 'spotify.request'">Function: 'spotify.request'</a>
+                  </li>
+                  <li>
+                    <a href="#function-39-spotify-get-39" class="toc-h2 toc-link" data-title="Function: 'spotify.get'">Function: 'spotify.get'</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#commands-variables" class="toc-h1 toc-link" data-title="Commands: Variables">Commands: Variables</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-defined-arguments" class="toc-h2 toc-link" data-title="User defined arguments">User defined arguments</a>
+                  </li>
+                  <li>
+                    <a href="#variables-created-by-the-user" class="toc-h2 toc-link" data-title="Variables created by the user">Variables created by the user</a>
+                  </li>
+                  <li>
+                    <a href="#dynamically-created-variables" class="toc-h2 toc-link" data-title="Dynamically created variables">Dynamically created variables</a>
+                  </li>
+                  <li>
+                    <a href="#variable-39-user-39" class="toc-h2 toc-link" data-title="Variable: 'user'">Variable: 'user'</a>
+                  </li>
+                  <li>
+                    <a href="#variable-39-points-39" class="toc-h2 toc-link" data-title="Variable: 'points'">Variable: 'points'</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Join our Discord for help</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the SharpaBot documentation! This documentation explains how to use the Twitch bot, how custom commands work (what variables and methods are available, and usage examples), and explains the individual endpoints of our API.</p>
+
+<p>The dark area on the right side shows code examples for the bot commands, as well as examples and return values for the API request.</p>
+
+<p>This documentation was created using <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
+<h1 id='using-the-website'>Using the website</h1><h2 id='login'>Login</h2>
+<p>For authentication, <a href="https://oauth.net/2/">OAuth 2.0</a> is used. To log in, just press &quot;Connect to Twitch&quot;. You will be forwarded to an external website (id.twitch.tv). If you are already logged in to Twitch, you only need to authorize the service for SharpaBot. If you are not yet logged in, you have to log in with your Twitch data.</p>
+<h2 id='web-interface'>web interface</h2>
+<p>As soon as you have logged in, you should land on the dashboard. On the left side you see the navigation, with which you can switch to the different subpages (e.g. commands or security).</p>
+
+<p>At the top of the bar you can set the language and see the current status of your twitch bot (Connected, Not Connected). With a click on &quot;Connect&quot; you can start your bot - provided that the authentication token of your bot is already set. If the bot has already been started, you can shut down the bot by clicking on &quot;Disconnect&quot;.</p>
+
+<p>Further left you see the bell. It shows notifications when you click on it. The red number next to the bell indicates whether there are any notifications and if so, how many (if no number is visible, there are none).</p>
+<h2 id='page-authentication'>Page: Authentication</h2>
+<p>This page is used to set the authentication token for the bot. You can get the token <a href="https://twitchapps.com/tmi/">here</a>. This token must be set, otherwise the twitch bot cannot connect.</p>
+
+<p>For some functions additional services must be linked. For example, because the song requests run via Spotify, a Spotify link is needed. Just click on &quot;Link Spotify&quot;. <aside class="notice">You can get to this page by clicking on your avatar (picture above right) and clicking on &quot;Authentication&quot;</aside></p>
+<h2 id='page-dashboard'>Page: Dashboard</h2>
+<p>On the dashboard you can view <strong>stream data</strong> of the <strong>last 7 days</strong>. This includes the number of sent messages, sent commands, deleted rewrites and distributed timeouts. Next to it a line chart can be seen, which visualizes the values of the individual days. Below the blue and red text there are two grey numbers. The first number shows the difference to the last stream and the second number (in brackets) shows the percentage increase (or decrease).</p>
+
+<p>Below this are 2 blue boxes showing the Top Chatter (the user who was most active in the chat) and the Top Command (most used command) of the last 7 days.</p>
+<h2 id='page-commands'>Page: Commands</h2>
+<p>On the page &quot;Commands&quot; you can see a table which contains all <strong>ready created commands</strong>. By default the bot has no commands, so you have to create them first. To do this, simply press &quot;Create&quot;.</p>
+
+<p>If you press &quot;Create&quot; you will get to a new page where you can set the parameters of the command. You only need <strong>3 fields</strong> -&gt; <strong>name</strong>, <strong>command</strong> and the <strong>action</strong> (well, there can be several fields).</p>
+<h3 id='name-information'>Name (Information)</h3>
+<p>The name of the command. This is a meta information and is not used in the stream. The name is displayed on this web page in the command table to identify the command. At some point there will be a table for all users by URL (as known from Nightbot, Moobot or other bots; then the name will not be as irrelevant.</p>
+<h3 id='description-information'>Description (Information)</h3>
+<p>The same applies to the description as to the name, but the description is not displayed on the command management table. Later in the public table the description will be shown.</p>
+<h3 id='command-chat-usage'>command (chat usage)</h3>
+<p>The command specifies what string the user must write in the streamchat to trigger the command. (for example &quot;!age&quot; or &quot;!elo&quot;)</p>
+<h3 id='alias-chat-usage'>Alias (chat usage)</h3>
+<p>If &quot;Add Alias&quot; is pressed, any number of alternative commands can be specified. (for example &quot;!songrequest&quot; (command) and &quot;!sr&quot; (alias))</p>
+<h3 id='global-delay'>Global (delay)</h3>
+<p>The global delay is used to prevent commands from being spammed. It is specified in seconds. If the delay is set to 30, the command cannot be reused until 30 seconds after it was last used.</p>
+<h3 id='per-user-delay'>Per user (delay)</h3>
+<p>For the &quot;Per User&quot; delay, the same applies to the global delay, except that the global delay applies only to the user who used the command. This prevents the same user from using the command more than once and other users from not getting the chance to do so (e.g. for song requests you can set a global delay of 10 seconds and a &quot;Per User&quot; delay of 30 seconds, so that the same user does not always add his songs).</p>
+<h3 id='activity-points-costs'>activity points (costs)</h3>
+<p>This specifies whether the command costs activity points. The user&#39;s activity points can only be viewed if a command is created that outputs them. <aside class="notice">Create a new command with the action &quot;<strong>Chat input</strong>&quot; and enter in the message for example &quot;<strong>You have ${points} Activity points</strong>&quot;)</aside></p>
+<h3 id='actions'>Actions</h3>
+<p>Here you can choose templates or give direct commands to the bot (template &quot;Raw&quot;). Some templates have predefined default values (like &quot;Song Request&quot; or &quot;Current Song&quot;), so they can be created quickly (because there are no standard commands)</p>
+<h3 id='rights'>Rights</h3>
+<p>Here you can define who is allowed to use the command. You can select a role, or give the right to selected users. As a broadcaster you can always use the command. If you want the command to be available for everyone, leave the table empty.</p>
+<h2 id='page-security-gt-spam-protection'>Page: Security -&gt; Spam protection</h2>
+<p>On this page you can set your spam protection. By default all types of spam protection are disabled. With the &quot;Activate&quot; button these can be activated. But don&#39;t forget to save after activation (by clicking the &quot;Save&quot; button).</p>
+<h3 id='blacklist'>Blacklist</h3>
+<p>The blacklist filter is a simple word or string filter. You can enter words or sentences, which you don&#39;t want to see in your stream. If the string is found in a message, the user who created it gets a timeout.</p>
+<h3 id='caps-lock'>Caps-Lock</h3>
+<p>The &quot;Caps Lock&quot; filter is a filter, which prevents the excessive use of caps lock messages (ALL IN GROẞBUCHSTABEN). You can set a limit (8 by default). If the limit is exceeded within 5 minutes, the user gets a timeout.</p>
+<h3 id='emotes'>Emotes</h3>
+<p>The &quot;Emote&quot;-filter works exactly the same way as the &quot;Caps-Lock&quot;-filter, only here messages are taken, which contain 4 or more emotes.</p>
+<h3 id='links'>Links</h3>
+<p>Simple thing - If someone posts a link, there is a timeout (whitelist function is in planning, for clip whitelist etc.)</p>
+<h3 id='special-characters'>Special characters</h3>
+<p>The special character filter works almost like the &quot;Caps-Lock&quot; filter, but the rules are a bit stricter. If the message consists of 25% of special characters, the message is considered potential spam. If the message consists of 50% special characters, it is even counted twice.</p>
+<h1 id='links'>Links</h1>
+<p>We will try to integrate as many services as possible in this project. Currently Spotify and Discord are available. By clicking on your avatar (picture above right) and &quot;Authentication&quot; you will get to the page to create these links.</p>
+<h2 id='spotify'>Spotify</h2>
+<p><u>Link Spotify to enable the following features:</u></p>
+
+<ul>
+<li>Song Request (You can request a song)</li>
+<li>Song request (which song is currently playing)</li>
+<li>(Planned) Song Skip</li>
+</ul>
+<h2 id='discord'>Discord</h2>
+<p><u>Link Discord to enable the following features:</u></p>
+
+<ul>
+<li>Discord-Webhook (notification when you go live)</li>
+</ul>
+<h1 id='commands-functions'>Commands: Functions</h1>
+<p>To give the broadcaster as much freedom as possible when creating commands, there are the possibilities to tell the bot directly what to do when a command is entered (raw input). But to make the creation not too complicated at the same time, standard templates were built in, where you only have to fill in the necessary fields. However, the raw functions are described in more detail here.</p>
+
+<p>There is also a number field above, where you can specify how many parameters your created command has. How to use the parameters is explained in <a href="#user-defined-arguments">User defined arguments</a>.</p>
+<h2 id='function-39-set-39'>Function: &#39;set&#39;</h2>
+<blockquote>
+<p>If you want to change the message when a song request happens, but Spotify is not running (or paused), you only have to change the variable &#39;potify.paused&#39;.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.paused Sorry, nothing is currently running here.
+<span class="c"># Parameter 1: "spotify.paused"</span>
+<span class="c"># Parameter 2: "Sorry, nothing is currently running here."</span>
+</code></pre></div>
+<blockquote>
+<p>If you now use the Song Request method, the newly defined &#39;pause message&#39; is used instead of the default message.</p>
+</blockquote>
+
+<p>The function &#39;set&#39; is relatively simple. It expects 2 parameters.</p>
+
+<p>The first parameter is the unique key or the name of the variable. This is needed to be able to use the variable later or to allow the system to recognize and assign the variable (which is more likely).</p>
+
+<p>The second parameter is the value or content of the variable.</p>
+
+<p>Both the key and the value can consist of any characters. While the key may not contain spaces, the value may contain any number of spaces. Variables are mostly optional, because there are default values for most cases (current ones even in all cases).</p>
+<h2 id='function-39-say-39'>Function: &#39;say&#39;</h2>
+<blockquote>
+<p>Example: The Bot Greets</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say Hello HeyGuys
+</code></pre></div>
+<p>This is probably the easiest function of all. It needs 1 parameter.</p>
+
+<p>The parameter is a string of any length and all characters are allowed (as long as they work in twitch chat).</p>
+
+<p>You can also use variables.</p>
+<h2 id='function-39-spotify-request-39'>Function: &#39;spotify.request&#39;</h2>
+<blockquote>
+<p>Add Sandstorm from Darude and set all (optional) variables.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.success Next you can enjoy <span class="s1">'${song.name}'</span> from <span class="k">${</span><span class="nv">song</span><span class="p">.artist</span><span class="k">}</span><span class="nb">.</span>
+<span class="nb">set </span>spotify.error Not wanting to right now. Try again later.
+<span class="nb">set </span>spotify.paused Currently nothing is playing. Try again later.
+spotify.request Darude Sandstorm
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<blockquote>
+<p>If all goes well, the bot should now answer: &#39;Next you can enjoy &#39;Sandstorm&#39; by Darude.`</p>
+
+<p>It&#39;s possible that songs have more than one artist, in this case they are automatically separated (with comma + &#39;and&#39;).</p>
+
+<p>Example: &#39;Next you can enjoy &#39;Forever&#39; by Justin Bieber, Post Malone and Clever.`</p>
+</blockquote>
+
+<p>The function searches for a song (via Spotify) and adds the found song to the queue. This only works if Spotify is running and not paused. The command needs 1 parameter and uses 3 optional variables.</p>
+
+<p>The parameter is the search string. The variables are messages which are output in different cases.</p>
+
+<ul>
+<li>Message if everything worked. (<code>spotify.success</code>)</li>
+<li>Message when something unexpected went wrong (server side problems or similar) (<code>spotify.error</code>)</li>
+<li>Message when Spotify is not running or paused. (<code>spotify.paused</code>)</li>
+</ul>
+
+<p>After the function <code>spotify.request</code> is executed, the bot sets a variable <code>response</code> in which it enters the message (one of the 3 cases mentioned above).</p>
+
+<p>The function also creates the variables <code>song.name</code> (song title) and <code>song.artist</code> (artist (can be several)). <aside class="notice">variables are used by setting a dollar sign and entering the name of the variable in curly brackets. Example: <code>${song.name}</code></aside></p>
+<h2 id='function-39-spotify-get-39'>Function: &#39;spotify.get&#39;</h2>
+<blockquote>
+<p>Get current song information with user defined answers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>spotify.success We are listening to <span class="s1">'${song.name}'</span> from <span class="k">${</span><span class="nv">song</span><span class="p">.artist</span><span class="k">}</span>
+<span class="nb">set </span>spotify.paused Nope, is pause.
+spotify.get
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<p>The function returns information about the currently played song (via Spotify) and writes the information to a variable. This only works if Spotify is running and not paused. The command needs no parameters and uses 2 optional variables.</p>
+
+<p>The variables are messages that are output in different cases.</p>
+
+<ul>
+<li>Message when everything has worked. (<code>spotify.success</code>)</li>
+<li>Message when Spotify is not running or paused. (<code>spotify.paused</code>)</li>
+</ul>
+
+<p>After the function &#39;spotify.get&#39; has been executed, the bot sets a variable <code>response</code> in which it enters the message (one of the 2 cases mentioned above).</p>
+
+<p>The function also creates the variables <code>song.name</code> (song title) and <code>song.artist</code> (artist (can be several)).</p>
+<h1 id='commands-variables'>Commands: Variables</h1>
+<p>To output information which is not static (like the name, the origin or similar) you can use variables. We try to offer as many variables as possible so that you can personalize your commands as much as possible.</p>
+
+<p>Variables are accessed by using a dollar sign and then entering the name of the variable in curly brackets. Do not use spaces in these brackets.</p>
+
+<p>Variables can be created using the <a href="#function-39-set-39"><code>&#39;set&#39;</code></a> function. But there are also other variables. This section explains what they are and how to use them.</p>
+<h2 id='user-defined-arguments'>User defined arguments</h2>
+<blockquote>
+<p>Example: Own timeout command (number of arguments: 3)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say /timeout <span class="k">${</span><span class="nv">1</span><span class="k">}</span> <span class="k">${</span><span class="nv">2</span><span class="k">}</span> <span class="k">${</span><span class="nv">3</span><span class="k">}</span>
+</code></pre></div>
+<p>If your command needs parameters, for example the search term in the song request command, then these parameters are written to variables. The name of the variable corresponds to a number from 1 to infinity. The 1 is the first parameter, the 2 is the second and so on.</p>
+<h2 id='variables-created-by-the-user'>Variables created by the user</h2>
+<blockquote>
+<p>Example: Command that prints the age</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nb">set </span>age 23
+say I am <span class="k">${</span><span class="nv">age</span><span class="k">}</span> years old
+</code></pre></div>
+<p>After creating a variable with the <code>&#39;set&#39;</code> function, you can also access this variable.</p>
+<h2 id='dynamically-created-variables'>Dynamically created variables</h2>
+<blockquote>
+<p>Example: Song request with standard answers (number of arguments: 1)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>spotify.request <span class="k">${</span><span class="nv">1</span><span class="k">}</span>
+say <span class="k">${</span><span class="nv">response</span><span class="k">}</span>
+</code></pre></div>
+<p>Temporary (dynamic) variables are created after certain functions have been executed.</p>
+
+<ul>
+<li><a href="#function-39-spotify-request-39">spotify.request</a> -&gt; sets the variables <code>response</code>, <code>song.name</code> and <code>song.artist</code></li>
+<li><a href="#function-39-spotify-get-39">spotify.get</a> -&gt; sets the variables <code>response</code>, <code>song.name</code> and <code>song.artist</code></li>
+</ul>
+<h2 id='variable-39-user-39'>Variable: &#39;user&#39;</h2>
+<blockquote>
+<p>Example: The bot probably doesn&#39;t like the user</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say I find @<span class="k">${</span><span class="nv">user</span><span class="k">}</span> stupid.
+<span class="c"># Output: I find @username stupid.</span>
+</code></pre></div>
+<p>The <code>user</code> variable prints the name of the user who executed the command.</p>
+<h2 id='variable-39-points-39'>Variable: &#39;points&#39;</h2>
+<blockquote>
+<p>Example: Outputs the activity points of the user</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code>say Activity points: <span class="k">${</span><span class="nv">points</span><span class="k">}</span>
+<span class="c"># Output: Activity points: 37</span>
+</code></pre></div>
+<p>The variable <code>points</code> displays the activity points of the user who executed the command. <aside class="notice">By the way: 50 activity points are generated per hour.</aside></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="bash">bash</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

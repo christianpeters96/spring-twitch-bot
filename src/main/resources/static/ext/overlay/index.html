@@ -1,0 +1,91 @@
+<html>
+    <style>
+        html, body {padding:0; margin:0;}
+        canvas {
+            width: 1920px;
+            height: 1080px;
+        }
+        @font-face {
+            font-family: "Advent";
+            font-style: normal;
+            font-weight: normal;
+            src: url('fonts/AdventPro-Regular.ttf');
+        }
+        @font-face {
+            font-family: "Advent";
+            font-style: normal;
+            font-weight: bold;
+            src: url('fonts/AdventPro-Bold.ttf');
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            //location.reload();
+        }, 5000);
+    </script>
+    <body bgcolor="black">
+        <span style="opacity:0; position: absolute; font-family:Advent;">.</span>
+        <span style="opacity:0; position: absolute; font-family:Advent; font-weight:bold;">.</span>
+        <canvas id="canvas" width="1920" height="1080"></canvas>
+    </body>
+    <script>
+        /////////////////////////////////////////////////////////////////////
+
+        setTimeout(() => {
+
+            let ctx = document.getElementById("canvas").getContext("2d");
+
+            let screenWidth = 1920;
+            let screenHeight = 1080;
+
+            let lineThickness = 2;
+
+            ctx.fillStyle = 'white';
+            ctx.fillRect(20, 20, screenWidth - 40, lineThickness);
+
+            let boxWidth = 350;
+            let boxHeight = 50;
+            let boxesMargin = 30;
+
+            drawEventBox(1920/2 - boxWidth*2 - 1.5 * boxesMargin, 30, boxWidth, boxHeight, "Latest Follower", "heart", "sharpadogge");
+            drawEventBox(1920/2 - boxWidth*1 - 0.5 * boxesMargin, 30, boxWidth, boxHeight, "Latest Subscription", "star", "-");
+            drawEventBox(1920/2 + 0.5 * boxesMargin, 30, boxWidth, boxHeight, "Latest Cheer", "diamond", "-");
+            drawEventBox(1920/2 + boxWidth + 1.5 * boxesMargin, 30, boxWidth, boxHeight, "Latest Donation", "dollar-symbol", "-");
+
+            function drawEventBox(x, y, w, h, text, imageName, lock_text) {
+                ctx.fillStyle = 'transparent';
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = lineThickness;
+                ctx.rect(x, y, w, h);
+                ctx.stroke();
+
+                ctx.fillStyle = "white";
+                ctx.font = "bold 20px 'Advent'";
+                ctx.textAlign = "center";
+                ctx.fillText(text, x + (boxWidth / 2), y + 20);
+
+                if (typeof lock_text === "string") {
+                    ctx.fillStyle = "white";
+                    ctx.font = "20px 'Advent'";
+                    ctx.textAlign = "center";
+                    ctx.fillText(lock_text, x + (boxWidth / 2), y + 40);
+                }
+
+                if (typeof imageName === "string") {
+                    let image = new Image();
+                    image.onload = function () {
+                        ctx.drawImage(image, 0, 0, 512, 512, x + 13, y + 13, 24, 24);
+                        ctx.fillStyle = "transparent";
+                        ctx.fillRect(0, 0, 512, 512);
+                    };
+                    image.src = 'img/' + imageName + '.png';
+                }
+            }
+
+        }, 10);
+
+        
+
+        /////////////////////////////////////////////////////////////////////
+    </script>
+</html>
